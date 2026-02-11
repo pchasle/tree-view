@@ -2,9 +2,14 @@ import styled from "styled-components";
 
 export const Toolbar = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
+
+  > :first-child {
+    width: 100%;
+  }
 `;
 
 export const ScrollContainer = styled.div`

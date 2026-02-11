@@ -32,9 +32,7 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
       ref={ref}
       data-index={dataIndex}
       isSelected={isHighlighted}
-      style={
-        debouncedQuery && !row.matches ? { opacity: 0.35 } : undefined
-      }
+      style={debouncedQuery && !row.matches ? { opacity: 0.35 } : undefined}
       onClick={() => {
         window.alert(`Navigate to ${getRowUrl(row)}`);
       }}
@@ -50,7 +48,13 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
         <HighlightText text={row.identifier} query={debouncedQuery} />
       </Table.Cell>
       <Table.Cell>
-        <Image src={row.image} alt={row.label} width={48} height={48} />
+        <Image
+          src={row.image}
+          alt={row.label}
+          width={48}
+          height={48}
+          isStacked={row.product_type !== "variant"}
+        />
       </Table.Cell>
       <Table.Cell title={row.label}>
         <HighlightText text={row.label} query={debouncedQuery} />
