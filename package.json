@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "akeneo-design-system": "^4.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
