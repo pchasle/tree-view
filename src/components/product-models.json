@@ -1,0 +1,176 @@
+[
+  {
+    "type": "model",
+    "identifier": "tshirt_classic",
+    "label": "Classic T-Shirt",
+    "image": "https://picsum.photos/seed/tshirt_classic/200/200",
+    "parent": null,
+    "variant_count": 6
+  },
+  {
+    "type": "submodel",
+    "identifier": "tshirt_classic_blue",
+    "label": "Classic T-Shirt Blue",
+    "image": "https://picsum.photos/seed/tshirt_classic_blue/200/200",
+    "parent": "tshirt_classic",
+    "variant_count": 3,
+    "axes": ["Color:Blue"]
+  },
+  {
+    "type": "variant",
+    "identifier": "tshirt_classic_blue_s",
+    "label": "Classic T-Shirt Blue S",
+    "image": "https://picsum.photos/seed/tshirt_classic_blue_s/200/200",
+    "parent": "tshirt_classic_blue",
+    "axes": ["Color:Blue", "Size:S"]
+  },
+  {
+    "type": "variant",
+    "identifier": "tshirt_classic_blue_m",
+    "label": "Classic T-Shirt Blue M",
+    "image": "https://picsum.photos/seed/tshirt_classic_blue_m/200/200",
+    "parent": "tshirt_classic_blue",
+    "axes": ["Color:Blue", "Size:M"]
+  },
+  {
+    "type": "variant",
+    "identifier": "tshirt_classic_blue_l",
+    "label": "Classic T-Shirt Blue L",
+    "image": "https://picsum.photos/seed/tshirt_classic_blue_l/200/200",
+    "parent": "tshirt_classic_blue",
+    "axes": ["Color:Blue", "Size:L"]
+  },
+  {
+    "type": "submodel",
+    "identifier": "tshirt_classic_red",
+    "label": "Classic T-Shirt Red",
+    "image": "https://picsum.photos/seed/tshirt_classic_red/200/200",
+    "parent": "tshirt_classic",
+    "variant_count": 3,
+    "axes": ["Color:Red"]
+  },
+  {
+    "type": "variant",
+    "identifier": "tshirt_classic_red_s",
+    "label": "Classic T-Shirt Red S",
+    "image": "https://picsum.photos/seed/tshirt_classic_red_s/200/200",
+    "parent": "tshirt_classic_red",
+    "axes": ["Color:Red", "Size:S"]
+  },
+  {
+    "type": "variant",
+    "identifier": "tshirt_classic_red_m",
+    "label": "Classic T-Shirt Red M",
+    "image": "https://picsum.photos/seed/tshirt_classic_red_m/200/200",
+    "parent": "tshirt_classic_red",
+    "axes": ["Color:Red", "Size:M"]
+  },
+  {
+    "type": "variant",
+    "identifier": "tshirt_classic_red_l",
+    "label": "Classic T-Shirt Red L",
+    "image": "https://picsum.photos/seed/tshirt_classic_red_l/200/200",
+    "parent": "tshirt_classic_red",
+    "axes": ["Color:Red", "Size:L"]
+  },
+  {
+    "type": "model",
+    "identifier": "sneaker_runner",
+    "label": "Runner Sneaker",
+    "image": "https://picsum.photos/seed/sneaker_runner/200/200",
+    "parent": null,
+    "variant_count": 4
+  },
+  {
+    "type": "submodel",
+    "identifier": "sneaker_runner_white",
+    "label": "Runner Sneaker White",
+    "image": "https://picsum.photos/seed/sneaker_runner_white/200/200",
+    "parent": "sneaker_runner",
+    "variant_count": 2,
+    "axes": ["Color:White"]
+  },
+  {
+    "type": "variant",
+    "identifier": "sneaker_runner_white_42",
+    "label": "Runner Sneaker White 42",
+    "image": "https://picsum.photos/seed/sneaker_runner_white_42/200/200",
+    "parent": "sneaker_runner_white",
+    "axes": ["Color:White", "Size:42"]
+  },
+  {
+    "type": "variant",
+    "identifier": "sneaker_runner_white_43",
+    "label": "Runner Sneaker White 43",
+    "image": "https://picsum.photos/seed/sneaker_runner_white_43/200/200",
+    "parent": "sneaker_runner_white",
+    "axes": ["Color:White", "Size:43"]
+  },
+  {
+    "type": "submodel",
+    "identifier": "sneaker_runner_black",
+    "label": "Runner Sneaker Black",
+    "image": "https://picsum.photos/seed/sneaker_runner_black/200/200",
+    "parent": "sneaker_runner",
+    "variant_count": 2,
+    "axes": ["Color:Black"]
+  },
+  {
+    "type": "variant",
+    "identifier": "sneaker_runner_black_42",
+    "label": "Runner Sneaker Black 42",
+    "image": "https://picsum.photos/seed/sneaker_runner_black_42/200/200",
+    "parent": "sneaker_runner_black",
+    "axes": ["Color:Black", "Size:42"]
+  },
+  {
+    "type": "variant",
+    "identifier": "sneaker_runner_black_43",
+    "label": "Runner Sneaker Black 43",
+    "image": "https://picsum.photos/seed/sneaker_runner_black_43/200/200",
+    "parent": "sneaker_runner_black",
+    "axes": ["Color:Black", "Size:43"]
+  },
+  {
+    "type": "model",
+    "identifier": "jacket_winter",
+    "label": "Winter Jacket",
+    "image": "https://picsum.photos/seed/jacket_winter/200/200",
+    "parent": null,
+    "variant_count": 2
+  },
+  {
+    "type": "submodel",
+    "identifier": "jacket_winter_green",
+    "label": "Winter Jacket Green",
+    "image": "https://picsum.photos/seed/jacket_winter_green/200/200",
+    "parent": "jacket_winter",
+    "variant_count": 2,
+    "axes": ["Color:Green"]
+  },
+  {
+    "type": "variant",
+    "identifier": "jacket_winter_green_m",
+    "label": "Winter Jacket Green M",
+    "image": "https://picsum.photos/seed/jacket_winter_green_m/200/200",
+    "parent": "jacket_winter_green",
+    "axes": ["Color:Green", "Size:M"]
+  },
+  {
+    "type": "variant",
+    "identifier": "jacket_winter_green_l",
+    "label": "Winter Jacket Green L",
+    "image": "https://picsum.photos/seed/jacket_winter_green_l/200/200",
+    "parent": "jacket_winter_green",
+    "axes": ["Color:Green", "Size:L"]
+  },
+  {
+    "type": "submodel",
+    "identifier": "jacket_winter_navy",
+    "label": "Winter Jacket Navy",
+    "image": "https://picsum.photos/seed/jacket_winter_navy/200/200",
+    "parent": "jacket_winter",
+    "variant_count": 0,
+    "axes": ["Color:Navy"]
+  }
+]
