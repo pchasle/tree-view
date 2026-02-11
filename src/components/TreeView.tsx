@@ -13,8 +13,23 @@ type ProductModel = {
   label: string;
   image: string;
   parent: string | null;
-  axes?: { attribute_label: string; axis_value: string }[];
+  axes?: { attribute_code: string; attribute_label: string; axis_value: string }[];
   complete_variant_products?: { total: number; complete: number };
+};
+
+const AXIS_TINTS: Record<string, string> = {};
+const AXIS_TINT_PALETTE = [
+  "green", "dark_blue", "purple", "dark_purple", "yellow",
+  "red", "forest_green", "hot_pink", "coral_red", "orange", "chocolate",
+] as const;
+let nextTintIndex = 0;
+
+const getAxisTint = (attributeCode: string): string => {
+  if (!(attributeCode in AXIS_TINTS)) {
+    AXIS_TINTS[attributeCode] = AXIS_TINT_PALETTE[nextTintIndex % AXIS_TINT_PALETTE.length];
+    nextTintIndex++;
+  }
+  return AXIS_TINTS[attributeCode];
 };
 
 const getRowUrl = (row: ProductModel): string =>
@@ -535,7 +550,7 @@ export const TreeView = ({ product }: TreeViewProps) => {
                         {row.axes.map((axis) => {
                           const text = `${axis.attribute_label}:${axis.axis_value}`;
                           return (
-                            <Tag key={text} tint="blue">
+                            <Tag key={text} tint={getAxisTint(axis.attribute_code)}>
                               <HighlightText
                                 text={text}
                                 query={debouncedQuery}

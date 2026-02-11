@@ -17,6 +17,7 @@ const MODEL = {
 const SUBMODEL_AXES = [
   {
     attr: 'Color',
+    attr_code: 'color',
     values: [
       'White', 'Black', 'Navy', 'Heather Grey', 'Red',
       'Forest Green', 'Sky Blue', 'Burgundy', 'Sand', 'Charcoal',
@@ -24,6 +25,7 @@ const SUBMODEL_AXES = [
   },
   {
     attr: 'Fabric',
+    attr_code: 'fabric',
     values: ['Cotton', 'Organic Cotton', 'Tri-Blend'],
   },
 ];
@@ -31,10 +33,12 @@ const SUBMODEL_AXES = [
 const VARIANT_AXES = [
   {
     attr: 'Size',
+    attr_code: 'size',
     values: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL'],
   },
   {
     attr: 'Fit',
+    attr_code: 'fit',
     values: ['Regular', 'Slim', 'Relaxed', 'Tall'],
   },
 ];
@@ -59,7 +63,7 @@ function cartesian(axes) {
   const result = [];
   for (const val of first.values) {
     for (const combo of restCombos) {
-      result.push([{ attr: first.attr, value: val }, ...combo]);
+      result.push([{ attr: first.attr, attr_code: first.attr_code, value: val }, ...combo]);
     }
   }
   return result;
@@ -109,7 +113,7 @@ function generateProducts() {
       image: `https://picsum.photos/seed/${subIdentifier}/200/200`,
       parent: MODEL.slug,
       complete_variant_products: { total: variantCount, complete: subComplete },
-      axes: subCombo.map(a => ({ attribute_label: a.attr, axis_value: a.value })),
+      axes: subCombo.map(a => ({ attribute_code: a.attr_code, attribute_label: a.attr, axis_value: a.value })),
     });
 
     for (const varCombo of selectedVariants) {
@@ -124,7 +128,7 @@ function generateProducts() {
         label: varLabel,
         image: `https://picsum.photos/seed/${varIdentifier}/200/200`,
         parent: subIdentifier,
-        axes: varCombo.map(a => ({ attribute_label: a.attr, axis_value: a.value })),
+        axes: varCombo.map(a => ({ attribute_code: a.attr_code, attribute_label: a.attr, axis_value: a.value })),
       });
     }
   }
