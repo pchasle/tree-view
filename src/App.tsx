@@ -9,7 +9,7 @@ function App() {
   return (
     <ThemeProvider theme={pimTheme}>
       <DatasetProvider>
-        <TreeView product={{ product_type: "variant", technical_id: "64" }} />
+        <TreeView product={{ product_type: "variant", technical_id: "4" }} />
         <DatasetSelector />
       </DatasetProvider>
     </ThemeProvider>
