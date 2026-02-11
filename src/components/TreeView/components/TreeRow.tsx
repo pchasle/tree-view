@@ -41,7 +41,7 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
           window.alert(translate(`Navigate to ${getRowUrl(row)}`));
         }}
       >
-        <Table.Cell>
+        <Table.Cell onClick={e => e.stopPropagation()}>
           <TypeCell
             type={row.product_type}
             isCollapsed={isCollapsed}
