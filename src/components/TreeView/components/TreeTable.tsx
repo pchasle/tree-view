@@ -1,8 +1,13 @@
 import { useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { Table } from "akeneo-design-system";
+import {
+  NoResultsIllustration,
+  Placeholder,
+  ProductsIllustration,
+  Table,
+} from "akeneo-design-system";
 import type { AnnotatedRow, SortColumn } from "../types.ts";
-import { ScrollContainer } from "./styled.ts";
+import { PlaceholderContainer, ScrollContainer } from "./styled.ts";
 import { TreeRow } from "./TreeRow.tsx";
 
 type TreeTableProps = {
@@ -47,6 +52,18 @@ export const TreeTable = ({
       ? rowVirtualizer.getTotalSize() -
         virtualItems[virtualItems.length - 1].end
       : 0;
+
+  if (rows.length === 0) {
+    return (
+      <PlaceholderContainer>
+        <Placeholder
+          title="No results found"
+          illustration={<NoResultsIllustration />}
+          size="large"
+        />
+      </PlaceholderContainer>
+    );
+  }
 
   return (
     <ScrollContainer ref={scrollContainerRef}>

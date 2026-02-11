@@ -18,6 +18,13 @@ export const ScrollContainer = styled.div`
   contain: strict;
 `;
 
+export const PlaceholderContainer = styled.div`
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Highlight = styled.mark`
   background-color: yellow;
   font-weight: bold;
