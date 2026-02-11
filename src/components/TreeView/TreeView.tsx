@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from "react";
-import type { TreeViewProps, PersistedState } from "./types.ts";
+import type { PersistedState, ProductType } from "./types.ts";
 import { useAxisTint } from "./hooks/useAxisTint.ts";
 import { useDebouncedValue } from "./hooks/useDebouncedValue.ts";
 import { useTreeSort } from "./hooks/useTreeSort.ts";
@@ -8,6 +8,13 @@ import { usePersistedTreeState } from "./hooks/usePersistedTreeState.ts";
 import { useTreeData } from "./hooks/useTreeData.ts";
 import { TreeToolbar } from "./components/TreeToolbar.tsx";
 import { TreeTable } from "./components/TreeTable.tsx";
+
+type TreeViewProps = {
+  product: {
+    product_type: ProductType;
+    technical_id: string;
+  };
+};
 
 export const TreeView = ({ product }: TreeViewProps) => {
   const [searchQuery, setSearchQuery] = useState("");

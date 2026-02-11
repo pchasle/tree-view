@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import type {
-  ProductModel,
+  ProductRow,
   SortColumn,
   SortDirection,
   PersistedState,
@@ -26,7 +26,7 @@ const loadState = (rootId: string): PersistedState | null => {
 };
 
 export const usePersistedTreeState = (
-  data: ProductModel[] | undefined,
+  data: ProductRow[] | undefined,
   state: {
     sortColumn: SortColumn;
     sortDirection: SortDirection;

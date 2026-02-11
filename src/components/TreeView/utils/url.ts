@@ -1,6 +1,6 @@
-import type { ProductModel } from "../types.ts";
+import type { ProductRow } from "../types.ts";
 
-export const getRowUrl = (row: ProductModel): string =>
+export const getRowUrl = (row: ProductRow): string =>
   row.product_type === "variant"
     ? `/product/${row.technical_id}`
     : `/product-model/${row.technical_id}`;

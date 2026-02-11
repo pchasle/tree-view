@@ -1,20 +1,18 @@
 import { useMemo } from "react";
 import { useQuery } from "react-query";
-import type { ProductModel, AnnotatedRow } from "../types.ts";
+import type { ProductRow, AnnotatedRow } from "../types.ts";
 import { buildTreeOrder, annotateRows } from "../utils/tree.ts";
 
-const fetchProductModels = (): Promise<ProductModel[]> =>
-  import("../../product-models.json").then(
-    (m) => m.default as ProductModel[],
-  );
+const fetchProductModels = (): Promise<ProductRow[]> =>
+  import("../../product-models.json").then((m) => m.default as ProductRow[]);
 
 export const useTreeData = (
-  comparator: (a: ProductModel, b: ProductModel) => number,
+  comparator: (a: ProductRow, b: ProductRow) => number,
   debouncedQuery: string,
   showHidden: boolean,
   collapsedSubmodels: Set<string>,
 ): {
-  data: ProductModel[] | undefined;
+  data: ProductRow[] | undefined;
   rows: AnnotatedRow[];
   isLoading: boolean;
   isError: boolean;

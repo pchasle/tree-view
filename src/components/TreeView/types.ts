@@ -1,17 +1,21 @@
 export type ProductType = "model" | "submodel" | "variant";
 
-export type ProductModel = {
+export type ProductRow = {
   product_type: ProductType;
   identifier: string;
   technical_id: string;
   label: string;
   image: string;
   parent: string | null;
-  axes?: { attribute_code: string; attribute_label: string; axis_value: string }[];
+  axes?: {
+    attribute_code: string;
+    attribute_label: string;
+    axis_value: string;
+  }[];
   complete_variant_products?: { total: number; complete: number };
 };
 
-export type AnnotatedRow = ProductModel & {
+export type AnnotatedRow = ProductRow & {
   matches: boolean;
   visible: boolean;
 };
@@ -25,11 +29,4 @@ export type PersistedState = {
   searchQuery: string;
   showHidden: boolean;
   collapsedSubmodels: string[];
-};
-
-export type TreeViewProps = {
-  product: {
-    product_type: ProductType;
-    technical_id: string;
-  };
 };

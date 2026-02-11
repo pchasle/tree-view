@@ -1,12 +1,12 @@
 import { useState, useMemo } from "react";
-import type { SortColumn, SortDirection, ProductModel } from "../types.ts";
+import type { SortColumn, SortDirection, ProductRow } from "../types.ts";
 
 export const useTreeSort = () => {
   const [sortColumn, setSortColumn] = useState<SortColumn>("identifier");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
 
   const comparator = useMemo(
-    () => (a: ProductModel, b: ProductModel) => {
+    () => (a: ProductRow, b: ProductRow) => {
       if (sortColumn === "variant") {
         const aVariant = a.complete_variant_products;
         const bVariant = b.complete_variant_products;

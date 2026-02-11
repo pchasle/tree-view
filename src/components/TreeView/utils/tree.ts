@@ -1,10 +1,10 @@
-import type { ProductModel, AnnotatedRow } from "../types.ts";
+import type { ProductRow, AnnotatedRow } from "../types.ts";
 
 export const buildTreeOrder = (
-  items: ProductModel[],
-  comparator?: (a: ProductModel, b: ProductModel) => number,
-): ProductModel[] => {
-  const childrenByParent = new Map<string | null, ProductModel[]>();
+  items: ProductRow[],
+  comparator?: (a: ProductRow, b: ProductRow) => number,
+): ProductRow[] => {
+  const childrenByParent = new Map<string | null, ProductRow[]>();
   for (const item of items) {
     const key = item.parent ?? null;
     if (!childrenByParent.has(key)) {
@@ -13,7 +13,7 @@ export const buildTreeOrder = (
     childrenByParent.get(key)!.push(item);
   }
 
-  const result: ProductModel[] = [];
+  const result: ProductRow[] = [];
   const walk = (parentId: string | null) => {
     const children = childrenByParent.get(parentId);
     if (!children) return;
@@ -27,7 +27,7 @@ export const buildTreeOrder = (
   return result;
 };
 
-export const matchesSearch = (row: ProductModel, query: string): boolean => {
+export const matchesSearch = (row: ProductRow, query: string): boolean => {
   if (!query) return true;
   const q = query.toLowerCase();
   if (row.identifier.toLowerCase().includes(q)) return true;
@@ -41,10 +41,7 @@ export const matchesSearch = (row: ProductModel, query: string): boolean => {
   return false;
 };
 
-export const annotateRows = (
-  rows: ProductModel[],
-  query: string,
-): AnnotatedRow[] => {
+export const annotateRows = (rows: ProductRow[], query: string): AnnotatedRow[] => {
   if (!query) {
     return rows.map((row) => ({ ...row, matches: true, visible: true }));
   }
@@ -77,7 +74,7 @@ export const annotateRows = (
   return annotated;
 };
 
-export const getRootIdentifier = (data: ProductModel[]): string => {
+export const getRootIdentifier = (data: ProductRow[]): string => {
   const root = data.find((item) => item.parent === null);
   if (!root) throw new Error("Root product model not found in data");
   return root.identifier;

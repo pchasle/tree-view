@@ -1,5 +1,5 @@
 import { useMemo, useCallback } from "react";
-import type { ProductModel } from "../types.ts";
+import type { ProductRow } from "../types.ts";
 
 const AXIS_TINT_PALETTE = [
   "green",
@@ -15,7 +15,7 @@ const AXIS_TINT_PALETTE = [
   "chocolate",
 ] as const;
 
-export const useAxisTint = (data: ProductModel[] | undefined) => {
+export const useAxisTint = (data: ProductRow[] | undefined) => {
   const tintMap = useMemo(() => {
     if (!data) return {};
     const map: Record<string, string> = {};
