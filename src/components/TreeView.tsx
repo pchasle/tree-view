@@ -1,6 +1,8 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useQuery } from "react-query";
+import { useVirtualizer } from "@tanstack/react-virtual";
 import styled from "styled-components";
+import { ArrowDownIcon, ArrowRightIcon, Tag, Tags } from "akeneo-design-system";
 
 type ProductType = "model" | "submodel" | "variant";
 
@@ -61,14 +63,16 @@ const matchesSearch = (row: ProductModel, query: string): boolean => {
   const q = query.toLowerCase();
   if (row.identifier.toLowerCase().includes(q)) return true;
   if (row.label.toLowerCase().includes(q)) return true;
-  if (row.axes?.some((axis) => `${axis.attribute_label}:${axis.axis_value}`.toLowerCase().includes(q))) return true;
+  if (
+    row.axes?.some((axis) =>
+      `${axis.attribute_label}:${axis.axis_value}`.toLowerCase().includes(q),
+    )
+  )
+    return true;
   return false;
 };
 
-const annotateRows = (
-  rows: ProductModel[],
-  query: string,
-): AnnotatedRow[] => {
+const annotateRows = (rows: ProductModel[], query: string): AnnotatedRow[] => {
   if (!query) {
     return rows.map((row) => ({ ...row, matches: true, visible: true }));
   }
@@ -118,6 +122,9 @@ const Table = styled.table`
   th {
     background-color: #f5f5f5;
     font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 `;
 
@@ -128,16 +135,17 @@ const ProductImage = styled.img`
   display: block;
 `;
 
-const AxesList = styled.ul`
-  margin: 0;
-  padding-left: 18px;
-`;
-
 const Toolbar = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
+`;
+
+const ScrollContainer = styled.div`
+  height: 80vh;
+  overflow-y: auto;
+  contain: strict;
 `;
 
 const ArrowButton = styled.span`
@@ -157,10 +165,12 @@ const SortableHeader = styled.th`
 const TableRow = styled.tr<{ $greyed?: boolean; $highlighted?: boolean }>`
   opacity: ${({ $greyed }) => ($greyed ? 0.35 : 1)};
   cursor: pointer;
-  background-color: ${({ $highlighted }) => ($highlighted ? "#e3f2fd" : "transparent")};
+  background-color: ${({ $highlighted }) =>
+    $highlighted ? "#e3f2fd" : "transparent"};
 
   &:hover {
-    background-color: ${({ $highlighted }) => ($highlighted ? "#bbdefb" : "#f0f0f0")};
+    background-color: ${({ $highlighted }) =>
+      $highlighted ? "#bbdefb" : "#f0f0f0"};
   }
 `;
 
@@ -202,23 +212,31 @@ const TypeCell = ({
 }) => {
   switch (type) {
     case "model":
-      return <TypeCellWrapper $indent={0}>{type}</TypeCellWrapper>;
+      return (
+        <TypeCellWrapper $indent={0}>
+          <Tag tint="olive_green">{type}</Tag>
+        </TypeCellWrapper>
+      );
     case "submodel":
       return (
-        <TypeCellWrapper $indent={20}>
+        <TypeCellWrapper $indent={0}>
           <ArrowButton
             onClick={(e) => {
               e.stopPropagation();
               onToggle?.();
             }}
           >
-            {isCollapsed ? "▶" : "▼"}
+            {isCollapsed ? <ArrowRightIcon /> : <ArrowDownIcon />}
           </ArrowButton>{" "}
-          {type}
+          <Tag tint="dark_cyan">{type}</Tag>
         </TypeCellWrapper>
       );
     case "variant":
-      return <TypeCellWrapper $indent={40}>{type}</TypeCellWrapper>;
+      return (
+        <TypeCellWrapper $indent={50}>
+          <Tag tint="blue">{type}</Tag>
+        </TypeCellWrapper>
+      );
   }
 };
 
@@ -286,9 +304,9 @@ export const TreeView = ({ product }: TreeViewProps) => {
   const [collapsedSubmodels, setCollapsedSubmodels] = useState<Set<string>>(
     new Set(),
   );
-  const [sortColumn, setSortColumn] = useState<"identifier" | "label" | "variant">(
-    "identifier",
-  );
+  const [sortColumn, setSortColumn] = useState<
+    "identifier" | "label" | "variant"
+  >("identifier");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [debouncedQuery, setDebouncedQuery] = useState<string>("");
@@ -309,7 +327,14 @@ export const TreeView = ({ product }: TreeViewProps) => {
       showHidden,
       collapsedSubmodels: [...collapsedSubmodels],
     });
-  }, [data, sortColumn, sortDirection, searchQuery, showHidden, collapsedSubmodels]);
+  }, [
+    data,
+    sortColumn,
+    sortDirection,
+    searchQuery,
+    showHidden,
+    collapsedSubmodels,
+  ]);
 
   const allSubmodelIds = useMemo(() => {
     if (!data) return [];
@@ -325,7 +350,9 @@ export const TreeView = ({ product }: TreeViewProps) => {
         const bVariant = b.complete_variant_products;
         const aTotal = aVariant ? aVariant.total : -1;
         const bTotal = bVariant ? bVariant.total : -1;
-        const cmp = aTotal - bTotal || (aVariant?.complete ?? -1) - (bVariant?.complete ?? -1);
+        const cmp =
+          aTotal - bTotal ||
+          (aVariant?.complete ?? -1) - (bVariant?.complete ?? -1);
         return sortDirection === "asc" ? cmp : -cmp;
       }
       const aVal = a[sortColumn].toLowerCase();
@@ -342,7 +369,10 @@ export const TreeView = ({ product }: TreeViewProps) => {
     const annotated = annotateRows(treeRows, debouncedQuery);
 
     return annotated.filter((row) => {
-      if (row.product_type === "variant" && collapsedSubmodels.has(row.parent!)) {
+      if (
+        row.product_type === "variant" &&
+        collapsedSubmodels.has(row.parent!)
+      ) {
         return false;
       }
       if (debouncedQuery && !showHidden && !row.visible) {
@@ -351,6 +381,23 @@ export const TreeView = ({ product }: TreeViewProps) => {
       return true;
     });
   }, [data, comparator, debouncedQuery, showHidden, collapsedSubmodels]);
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => scrollContainerRef.current,
+    estimateSize: () => 65,
+    overscan: 5,
+  });
+
+  const virtualItems = rowVirtualizer.getVirtualItems();
+  const paddingTop = virtualItems.length > 0 ? virtualItems[0].start : 0;
+  const paddingBottom =
+    virtualItems.length > 0
+      ? rowVirtualizer.getTotalSize() -
+        virtualItems[virtualItems.length - 1].end
+      : 0;
 
   const handleSortClick = (column: "identifier" | "label" | "variant") => {
     if (sortColumn !== column) {
@@ -418,68 +465,101 @@ export const TreeView = ({ product }: TreeViewProps) => {
           </select>
         </label>
       </Toolbar>
-      <Table>
-        <thead>
-          <tr>
-            <th>Type</th>
-            <SortableHeader onClick={() => handleSortClick("identifier")}>
-              ID{getSortIndicator("identifier")}
-            </SortableHeader>
-            <th>Image</th>
-            <SortableHeader onClick={() => handleSortClick("label")}>
-              Label{getSortIndicator("label")}
-            </SortableHeader>
-            <SortableHeader onClick={() => handleSortClick("variant")}>
-              Variant{getSortIndicator("variant")}
-            </SortableHeader>
-            <th>Variation axis</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.identifier}
-              $greyed={!!debouncedQuery && !row.matches}
-              $highlighted={row.technical_id === product.technical_id}
-              onClick={() => {
-                window.alert(`Navigate to ${getRowUrl(row)}`);
-              }}
-            >
-              <td>
-                <TypeCell
-                  type={row.product_type}
-                  isCollapsed={collapsedSubmodels.has(row.identifier)}
-                  onToggle={() => handleToggleSubmodel(row.identifier)}
+      <ScrollContainer ref={scrollContainerRef}>
+        <Table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <SortableHeader onClick={() => handleSortClick("identifier")}>
+                ID{getSortIndicator("identifier")}
+              </SortableHeader>
+              <th>Image</th>
+              <SortableHeader onClick={() => handleSortClick("label")}>
+                Label{getSortIndicator("label")}
+              </SortableHeader>
+              <SortableHeader onClick={() => handleSortClick("variant")}>
+                Variant{getSortIndicator("variant")}
+              </SortableHeader>
+              <th>Variation axis</th>
+            </tr>
+          </thead>
+          <tbody>
+            {paddingTop > 0 && (
+              <tr>
+                <td
+                  colSpan={6}
+                  style={{ height: paddingTop, padding: 0, border: "none" }}
                 />
-              </td>
-              <td title={row.identifier}>
-                <HighlightText text={row.identifier} query={debouncedQuery} />
-              </td>
-              <td>
-                <ProductImage src={row.image} alt={row.label} />
-              </td>
-              <td title={row.label}>
-                <HighlightText text={row.label} query={debouncedQuery} />
-              </td>
-              <td>{row.complete_variant_products ? `${row.complete_variant_products.complete}/${row.complete_variant_products.total}` : ""}</td>
-              <td>
-                {row.axes && row.axes.length > 0 && (
-                  <AxesList>
-                    {row.axes.map((axis) => {
-                      const text = `${axis.attribute_label}:${axis.axis_value}`;
-                      return (
-                        <li key={text}>
-                          <HighlightText text={text} query={debouncedQuery} />
-                        </li>
-                      );
-                    })}
-                  </AxesList>
-                )}
-              </td>
-            </TableRow>
-          ))}
-        </tbody>
-      </Table>
+              </tr>
+            )}
+            {virtualItems.map((virtualItem) => {
+              const row = rows[virtualItem.index];
+              return (
+                <TableRow
+                  key={row.identifier}
+                  data-index={virtualItem.index}
+                  ref={rowVirtualizer.measureElement}
+                  $greyed={!!debouncedQuery && !row.matches}
+                  $highlighted={row.technical_id === product.technical_id}
+                  onClick={() => {
+                    window.alert(`Navigate to ${getRowUrl(row)}`);
+                  }}
+                >
+                  <td>
+                    <TypeCell
+                      type={row.product_type}
+                      isCollapsed={collapsedSubmodels.has(row.identifier)}
+                      onToggle={() => handleToggleSubmodel(row.identifier)}
+                    />
+                  </td>
+                  <td title={row.identifier}>
+                    <HighlightText
+                      text={row.identifier}
+                      query={debouncedQuery}
+                    />
+                  </td>
+                  <td>
+                    <ProductImage src={row.image} alt={row.label} />
+                  </td>
+                  <td title={row.label}>
+                    <HighlightText text={row.label} query={debouncedQuery} />
+                  </td>
+                  <td>
+                    {row.complete_variant_products
+                      ? `${row.complete_variant_products.complete}/${row.complete_variant_products.total}`
+                      : ""}
+                  </td>
+                  <td>
+                    {row.axes && row.axes.length > 0 && (
+                      <Tags>
+                        {row.axes.map((axis) => {
+                          const text = `${axis.attribute_label}:${axis.axis_value}`;
+                          return (
+                            <Tag key={text} tint="blue">
+                              <HighlightText
+                                text={text}
+                                query={debouncedQuery}
+                              />
+                            </Tag>
+                          );
+                        })}
+                      </Tags>
+                    )}
+                  </td>
+                </TableRow>
+              );
+            })}
+            {paddingBottom > 0 && (
+              <tr>
+                <td
+                  colSpan={6}
+                  style={{ height: paddingBottom, padding: 0, border: "none" }}
+                />
+              </tr>
+            )}
+          </tbody>
+        </Table>
+      </ScrollContainer>
     </>
   );
 };
