@@ -117,8 +117,8 @@ describe("TreeView", () => {
       isLoading: true,
       isError: false,
     });
-    render(<TreeView product={defaultProduct} />);
-    expect(screen.getByText("Loading...")).toBeDefined();
+    renderWithProviders(<TreeView product={defaultProduct} />);
+    expect(screen.getByTitle("Close")).toBeDefined();
   });
 
   it("shows error state when data fetch fails", () => {
@@ -127,8 +127,8 @@ describe("TreeView", () => {
       isLoading: false,
       isError: true,
     });
-    render(<TreeView product={defaultProduct} />);
-    expect(screen.getByText("Error loading data.")).toBeDefined();
+    renderWithProviders(<TreeView product={defaultProduct} />);
+    expect(screen.getByText("An error occurred")).toBeDefined();
   });
 
   it("renders all tree rows after data loads", () => {

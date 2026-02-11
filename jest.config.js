@@ -5,6 +5,7 @@ export default {
   roots: ["<rootDir>/tests"],
   testMatch: ["**/*.test.ts", "**/*.test.tsx"],
   moduleNameMapper: {
+    "^@akeneo-pim/shared$": "<rootDir>/src/shared/index.ts",
     "^(\\.{1,2}/.*)\\.tsx?$": "$1",
   },
   transform: {

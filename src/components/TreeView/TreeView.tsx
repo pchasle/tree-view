@@ -12,6 +12,7 @@ import { TreeViewModal } from "./components/TreeViewModal.tsx";
 import { useAxisTint } from "./hooks/useAxisTint.ts";
 import { useCollapseState } from "./hooks/useCollapseState.ts";
 import { usePersistedTreeState } from "./hooks/usePersistedTreeState.ts";
+import { useTranslate } from "@akeneo-pim/shared";
 import { useTreeData } from "./hooks/useTreeData.ts";
 import { useTreeSort } from "./hooks/useTreeSort.ts";
 import type { PersistedState, ProductType } from "./types.ts";
@@ -24,6 +25,7 @@ type TreeViewProps = {
 };
 
 export const TreeView = ({ product }: TreeViewProps) => {
+  const translate = useTranslate();
   const [searchQuery, setSearchQuery] = useState("");
   const [showHidden, setShowHidden] = useState(false);
   const debouncedQuery = useDebounce(searchQuery, 300);
@@ -89,12 +91,13 @@ export const TreeView = ({ product }: TreeViewProps) => {
     restore,
   );
 
-  if (isLoading) return <Modal closeTitle="Close" onClose={() => {}}></Modal>;
+  if (isLoading)
+    return <Modal closeTitle={translate("Close")} onClose={() => {}}></Modal>;
   if (isError)
     return (
-      <Modal closeTitle="Close" onClose={() => {}}>
+      <Modal closeTitle={translate("Close")} onClose={() => {}}>
         <Placeholder
-          title="An error occurred"
+          title={translate("An error occurred")}
           illustration={<ServerErrorIllustration />}
           size="large"
         />
@@ -122,8 +125,9 @@ export const TreeView = ({ product }: TreeViewProps) => {
         onDirectionChange={handleDirectionChange}
       />
       <Helper level="warning">
-        Some warning message, only in case the product model has more than 1000
-        variants.
+        {translate(
+          "Some warning message, only in case the product model has more than 1000 variants.",
+        )}
       </Helper>
     </TreeViewModal>
   );

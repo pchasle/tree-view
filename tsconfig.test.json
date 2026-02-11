@@ -9,7 +9,10 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "module": "CommonJS",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "@akeneo-pim/shared": ["./src/shared/index.ts"]
+    }
   },
   "include": ["src", "tests"]
 }

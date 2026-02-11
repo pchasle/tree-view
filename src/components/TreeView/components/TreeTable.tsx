@@ -8,6 +8,7 @@ import { useRef } from "react";
 import type { AnnotatedRow, SortColumn } from "../types.ts";
 import styled from "styled-components";
 import { TreeRow } from "./TreeRow.tsx";
+import { useTranslate } from "@akeneo-pim/shared";
 
 type TreeTableProps = {
   rows: AnnotatedRow[];
@@ -33,6 +34,7 @@ export const TreeTable = ({
   getSortDirection,
   onDirectionChange,
 }: TreeTableProps) => {
+  const translate = useTranslate();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const rowVirtualizer = useVirtualizer({
@@ -54,7 +56,7 @@ export const TreeTable = ({
     return (
       <PlaceholderContainer>
         <Placeholder
-          title="No results found"
+          title={translate("No results found")}
           illustration={<NoResultsIllustration />}
           size="large"
         />
@@ -66,7 +68,7 @@ export const TreeTable = ({
     <ScrollContainer ref={scrollContainerRef}>
       <Table>
         <Table.Header sticky={0}>
-          <Table.HeaderCell>Type</Table.HeaderCell>
+          <Table.HeaderCell>{translate("Type")}</Table.HeaderCell>
           <Table.HeaderCell
             isSortable
             sortDirection={getSortDirection("identifier")}
@@ -74,9 +76,9 @@ export const TreeTable = ({
               onDirectionChange("identifier", direction)
             }
           >
-            ID
+            {translate("ID")}
           </Table.HeaderCell>
-          <Table.HeaderCell>Image</Table.HeaderCell>
+          <Table.HeaderCell>{translate("Image")}</Table.HeaderCell>
           <Table.HeaderCell
             isSortable
             sortDirection={getSortDirection("label")}
@@ -84,7 +86,7 @@ export const TreeTable = ({
               onDirectionChange("label", direction)
             }
           >
-            Label
+            {translate("Label")}
           </Table.HeaderCell>
           <Table.HeaderCell
             isSortable
@@ -93,9 +95,9 @@ export const TreeTable = ({
               onDirectionChange("variant", direction)
             }
           >
-            Variant
+            {translate("Variant")}
           </Table.HeaderCell>
-          <Table.HeaderCell>Variation axis</Table.HeaderCell>
+          <Table.HeaderCell>{translate("Variation axis")}</Table.HeaderCell>
         </Table.Header>
         <Table.Body>
           {paddingTop > 0 && (

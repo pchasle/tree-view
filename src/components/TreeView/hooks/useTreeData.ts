@@ -4,7 +4,7 @@ import type { ProductRow, AnnotatedRow } from "../types.ts";
 import { buildTreeOrder, annotateRows } from "../utils/tree.ts";
 
 const fetchProductModels = (): Promise<ProductRow[]> =>
-  new Promise((resolve) => setTimeout(resolve, 1000)).then(() =>
+  new Promise((resolve) => setTimeout(resolve, 250)).then(() =>
     import("../../product-models.json").then((m) => m.default as ProductRow[]),
   );
 
