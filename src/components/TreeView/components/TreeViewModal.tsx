@@ -30,5 +30,5 @@ const WideModal = styled(Modal)`
 `;
 
 const ModalBody = styled.div`
-  width: 90%;
+  width: 95%;
 `;
