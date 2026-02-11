@@ -1,11 +1,10 @@
-import { useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import {
   NoResultsIllustration,
   Placeholder,
-  ProductsIllustration,
   Table,
 } from "akeneo-design-system";
+import { useRef } from "react";
 import type { AnnotatedRow, SortColumn } from "../types.ts";
 import { PlaceholderContainer, ScrollContainer } from "./styled.ts";
 import { TreeRow } from "./TreeRow.tsx";
@@ -17,9 +16,7 @@ type TreeTableProps = {
   collapsedSubmodels: Set<string>;
   onToggle: (identifier: string) => void;
   getAxisTint: (attributeCode: string) => string;
-  getSortDirection: (
-    column: SortColumn,
-  ) => "none" | "ascending" | "descending";
+  getSortDirection: (column: SortColumn) => "none" | "ascending" | "descending";
   onDirectionChange: (
     column: SortColumn,
     direction: "none" | "ascending" | "descending",
