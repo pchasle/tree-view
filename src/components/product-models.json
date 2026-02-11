@@ -1,25 +1,25 @@
 [
   {
-    "type": "model",
+    "product_type": "model",
     "identifier": "tshirt_classic",
     "technical_id": "1",
     "label": "Classic T-Shirt",
     "image": "https://picsum.photos/seed/tshirt_classic/200/200",
     "parent": null,
-    "variant_count": 6
+    "complete_variant_products": { "total": 6, "complete": 4 }
   },
   {
-    "type": "submodel",
+    "product_type": "submodel",
     "identifier": "tshirt_classic_blue",
     "technical_id": "2",
     "label": "Classic T-Shirt Blue",
     "image": "https://picsum.photos/seed/tshirt_classic_blue/200/200",
     "parent": "tshirt_classic",
-    "variant_count": 3,
+    "complete_variant_products": { "total": 3, "complete": 2 },
     "axes": ["Color:Blue"]
   },
   {
-    "type": "variant",
+    "product_type": "variant",
     "identifier": "tshirt_classic_blue_s",
     "technical_id": "3",
     "label": "Classic T-Shirt Blue S",
@@ -28,7 +28,7 @@
     "axes": ["Color:Blue", "Size:S"]
   },
   {
-    "type": "variant",
+    "product_type": "variant",
     "identifier": "tshirt_classic_blue_m",
     "technical_id": "4",
     "label": "Classic T-Shirt Blue M",
@@ -37,7 +37,7 @@
     "axes": ["Color:Blue", "Size:M"]
   },
   {
-    "type": "variant",
+    "product_type": "variant",
     "identifier": "tshirt_classic_blue_l",
     "technical_id": "5",
     "label": "Classic T-Shirt Blue L",
@@ -46,17 +46,17 @@
     "axes": ["Color:Blue", "Size:L"]
   },
   {
-    "type": "submodel",
+    "product_type": "submodel",
     "identifier": "tshirt_classic_red",
     "technical_id": "6",
     "label": "Classic T-Shirt Red",
     "image": "https://picsum.photos/seed/tshirt_classic_red/200/200",
     "parent": "tshirt_classic",
-    "variant_count": 3,
+    "complete_variant_products": { "total": 3, "complete": 1 },
     "axes": ["Color:Red"]
   },
   {
-    "type": "variant",
+    "product_type": "variant",
     "identifier": "tshirt_classic_red_s",
     "technical_id": "7",
     "label": "Classic T-Shirt Red S",
@@ -65,7 +65,7 @@
     "axes": ["Color:Red", "Size:S"]
   },
   {
-    "type": "variant",
+    "product_type": "variant",
     "identifier": "tshirt_classic_red_m",
     "technical_id": "8",
     "label": "Classic T-Shirt Red M",
@@ -74,7 +74,7 @@
     "axes": ["Color:Red", "Size:M"]
   },
   {
-    "type": "variant",
+    "product_type": "variant",
     "identifier": "tshirt_classic_red_l",
     "technical_id": "9",
     "label": "Classic T-Shirt Red L",

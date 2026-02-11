@@ -5,18 +5,18 @@ import styled from "styled-components";
 type ProductType = "model" | "submodel" | "variant";
 
 type ProductModel = {
-  type: ProductType;
+  product_type: ProductType;
   identifier: string;
   technical_id: string;
   label: string;
   image: string;
   parent: string | null;
   axes?: string[];
-  variant_count?: number;
+  complete_variant_products?: { total: number; complete: number };
 };
 
 const getRowUrl = (row: ProductModel): string =>
-  row.type === "variant"
+  row.product_type === "variant"
     ? `/product/${row.technical_id}`
     : `/product-model/${row.technical_id}`;
 
@@ -306,7 +306,7 @@ export const TreeView = () => {
   const allSubmodelIds = useMemo(() => {
     if (!data) return [];
     return data
-      .filter((item) => item.type === "submodel")
+      .filter((item) => item.product_type === "submodel")
       .map((item) => item.identifier);
   }, [data]);
 
@@ -326,7 +326,7 @@ export const TreeView = () => {
     const annotated = annotateRows(treeRows, debouncedQuery);
 
     return annotated.filter((row) => {
-      if (row.type === "variant" && collapsedSubmodels.has(row.parent!)) {
+      if (row.product_type === "variant" && collapsedSubmodels.has(row.parent!)) {
         return false;
       }
       if (debouncedQuery && !showHidden && !row.visible) {
@@ -428,21 +428,21 @@ export const TreeView = () => {
             >
               <td>
                 <TypeCell
-                  type={row.type}
+                  type={row.product_type}
                   isCollapsed={collapsedSubmodels.has(row.identifier)}
                   onToggle={() => handleToggleSubmodel(row.identifier)}
                 />
               </td>
-              <td>
+              <td title={row.identifier}>
                 <HighlightText text={row.identifier} query={debouncedQuery} />
               </td>
               <td>
                 <ProductImage src={row.image} alt={row.label} />
               </td>
-              <td>
+              <td title={row.label}>
                 <HighlightText text={row.label} query={debouncedQuery} />
               </td>
-              <td>{row.variant_count ?? ""}</td>
+              <td>{row.complete_variant_products ? `${row.complete_variant_products.complete}/${row.complete_variant_products.total}` : ""}</td>
               <td>
                 {row.axes && row.axes.length > 0 && (
                   <AxesList>
