@@ -2,6 +2,7 @@
   {
     "type": "model",
     "identifier": "tshirt_classic",
+    "technical_id": "1",
     "label": "Classic T-Shirt",
     "image": "https://picsum.photos/seed/tshirt_classic/200/200",
     "parent": null,
@@ -10,6 +11,7 @@
   {
     "type": "submodel",
     "identifier": "tshirt_classic_blue",
+    "technical_id": "2",
     "label": "Classic T-Shirt Blue",
     "image": "https://picsum.photos/seed/tshirt_classic_blue/200/200",
     "parent": "tshirt_classic",
@@ -19,6 +21,7 @@
   {
     "type": "variant",
     "identifier": "tshirt_classic_blue_s",
+    "technical_id": "3",
     "label": "Classic T-Shirt Blue S",
     "image": "https://picsum.photos/seed/tshirt_classic_blue_s/200/200",
     "parent": "tshirt_classic_blue",
@@ -27,6 +30,7 @@
   {
     "type": "variant",
     "identifier": "tshirt_classic_blue_m",
+    "technical_id": "4",
     "label": "Classic T-Shirt Blue M",
     "image": "https://picsum.photos/seed/tshirt_classic_blue_m/200/200",
     "parent": "tshirt_classic_blue",
@@ -35,6 +39,7 @@
   {
     "type": "variant",
     "identifier": "tshirt_classic_blue_l",
+    "technical_id": "5",
     "label": "Classic T-Shirt Blue L",
     "image": "https://picsum.photos/seed/tshirt_classic_blue_l/200/200",
     "parent": "tshirt_classic_blue",
@@ -43,6 +48,7 @@
   {
     "type": "submodel",
     "identifier": "tshirt_classic_red",
+    "technical_id": "6",
     "label": "Classic T-Shirt Red",
     "image": "https://picsum.photos/seed/tshirt_classic_red/200/200",
     "parent": "tshirt_classic",
@@ -52,6 +58,7 @@
   {
     "type": "variant",
     "identifier": "tshirt_classic_red_s",
+    "technical_id": "7",
     "label": "Classic T-Shirt Red S",
     "image": "https://picsum.photos/seed/tshirt_classic_red_s/200/200",
     "parent": "tshirt_classic_red",
@@ -60,6 +67,7 @@
   {
     "type": "variant",
     "identifier": "tshirt_classic_red_m",
+    "technical_id": "8",
     "label": "Classic T-Shirt Red M",
     "image": "https://picsum.photos/seed/tshirt_classic_red_m/200/200",
     "parent": "tshirt_classic_red",
@@ -68,6 +76,7 @@
   {
     "type": "variant",
     "identifier": "tshirt_classic_red_l",
+    "technical_id": "9",
     "label": "Classic T-Shirt Red L",
     "image": "https://picsum.photos/seed/tshirt_classic_red_l/200/200",
     "parent": "tshirt_classic_red",

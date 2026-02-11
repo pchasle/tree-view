@@ -7,12 +7,18 @@ type ProductType = "model" | "submodel" | "variant";
 type ProductModel = {
   type: ProductType;
   identifier: string;
+  technical_id: string;
   label: string;
   image: string;
   parent: string | null;
   axes?: string[];
   variant_count?: number;
 };
+
+const getRowUrl = (row: ProductModel): string =>
+  row.type === "variant"
+    ? `/product/${row.technical_id}`
+    : `/product-model/${row.technical_id}`;
 
 type AnnotatedRow = ProductModel & {
   matches: boolean;
@@ -150,6 +156,11 @@ const SortableHeader = styled.th`
 
 const TableRow = styled.tr<{ $greyed?: boolean }>`
   opacity: ${({ $greyed }) => ($greyed ? 0.35 : 1)};
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 const Highlight = styled.mark`
@@ -194,7 +205,12 @@ const TypeCell = ({
     case "submodel":
       return (
         <TypeCellWrapper $indent={20}>
-          <ArrowButton onClick={onToggle}>
+          <ArrowButton
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggle?.();
+            }}
+          >
             {isCollapsed ? "▶" : "▼"}
           </ArrowButton>{" "}
           {type}
@@ -377,7 +393,10 @@ export const TreeView = () => {
         </label>
         <label>
           View:{" "}
-          <select value={collapsedSubmodels.size === 0 ? "open" : "close"} onChange={handleViewChange}>
+          <select
+            value={collapsedSubmodels.size === 0 ? "open" : "close"}
+            onChange={handleViewChange}
+          >
             <option value="open">Open</option>
             <option value="close">Close</option>
           </select>
@@ -403,6 +422,9 @@ export const TreeView = () => {
             <TableRow
               key={row.identifier}
               $greyed={!!debouncedQuery && !row.matches}
+              onClick={() => {
+                window.alert(`Navigate to ${getRowUrl(row)}`);
+              }}
             >
               <td>
                 <TypeCell
