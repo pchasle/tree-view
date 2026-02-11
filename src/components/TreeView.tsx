@@ -11,7 +11,7 @@ type ProductModel = {
   label: string;
   image: string;
   parent: string | null;
-  axes?: string[];
+  axes?: { attribute_label: string; axis_value: string }[];
   complete_variant_products?: { total: number; complete: number };
 };
 
@@ -61,7 +61,7 @@ const matchesSearch = (row: ProductModel, query: string): boolean => {
   const q = query.toLowerCase();
   if (row.identifier.toLowerCase().includes(q)) return true;
   if (row.label.toLowerCase().includes(q)) return true;
-  if (row.axes?.some((axis) => axis.toLowerCase().includes(q))) return true;
+  if (row.axes?.some((axis) => `${axis.attribute_label}:${axis.axis_value}`.toLowerCase().includes(q))) return true;
   return false;
 };
 
@@ -446,11 +446,14 @@ export const TreeView = () => {
               <td>
                 {row.axes && row.axes.length > 0 && (
                   <AxesList>
-                    {row.axes.map((axis) => (
-                      <li key={axis}>
-                        <HighlightText text={axis} query={debouncedQuery} />
-                      </li>
-                    ))}
+                    {row.axes.map((axis) => {
+                      const text = `${axis.attribute_label}:${axis.axis_value}`;
+                      return (
+                        <li key={text}>
+                          <HighlightText text={text} query={debouncedQuery} />
+                        </li>
+                      );
+                    })}
                   </AxesList>
                 )}
               </td>

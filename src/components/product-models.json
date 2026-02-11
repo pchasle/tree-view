@@ -16,7 +16,7 @@
     "image": "https://picsum.photos/seed/tshirt_classic_blue/200/200",
     "parent": "tshirt_classic",
     "complete_variant_products": { "total": 3, "complete": 2 },
-    "axes": ["Color:Blue"]
+    "axes": [{ "attribute_label": "Color", "axis_value": "Blue" }]
   },
   {
     "product_type": "variant",
@@ -25,7 +25,7 @@
     "label": "Classic T-Shirt Blue S",
     "image": "https://picsum.photos/seed/tshirt_classic_blue_s/200/200",
     "parent": "tshirt_classic_blue",
-    "axes": ["Color:Blue", "Size:S"]
+    "axes": [{ "attribute_label": "Size", "axis_value": "S" }]
   },
   {
     "product_type": "variant",
@@ -34,7 +34,7 @@
     "label": "Classic T-Shirt Blue M",
     "image": "https://picsum.photos/seed/tshirt_classic_blue_m/200/200",
     "parent": "tshirt_classic_blue",
-    "axes": ["Color:Blue", "Size:M"]
+    "axes": [{ "attribute_label": "Size", "axis_value": "M" }]
   },
   {
     "product_type": "variant",
@@ -43,7 +43,7 @@
     "label": "Classic T-Shirt Blue L",
     "image": "https://picsum.photos/seed/tshirt_classic_blue_l/200/200",
     "parent": "tshirt_classic_blue",
-    "axes": ["Color:Blue", "Size:L"]
+    "axes": [{ "attribute_label": "Size", "axis_value": "L" }]
   },
   {
     "product_type": "submodel",
@@ -53,7 +53,7 @@
     "image": "https://picsum.photos/seed/tshirt_classic_red/200/200",
     "parent": "tshirt_classic",
     "complete_variant_products": { "total": 3, "complete": 1 },
-    "axes": ["Color:Red"]
+    "axes": [{ "attribute_label": "Color", "axis_value": "Red" }]
   },
   {
     "product_type": "variant",
@@ -62,7 +62,7 @@
     "label": "Classic T-Shirt Red S",
     "image": "https://picsum.photos/seed/tshirt_classic_red_s/200/200",
     "parent": "tshirt_classic_red",
-    "axes": ["Color:Red", "Size:S"]
+    "axes": [{ "attribute_label": "Size", "axis_value": "S" }]
   },
   {
     "product_type": "variant",
@@ -71,7 +71,7 @@
     "label": "Classic T-Shirt Red M",
     "image": "https://picsum.photos/seed/tshirt_classic_red_m/200/200",
     "parent": "tshirt_classic_red",
-    "axes": ["Color:Red", "Size:M"]
+    "axes": [{ "attribute_label": "Size", "axis_value": "M" }]
   },
   {
     "product_type": "variant",
@@ -80,6 +80,6 @@
     "label": "Classic T-Shirt Red L",
     "image": "https://picsum.photos/seed/tshirt_classic_red_l/200/200",
     "parent": "tshirt_classic_red",
-    "axes": ["Color:Red", "Size:L"]
+    "axes": [{ "attribute_label": "Size", "axis_value": "L" }]
   }
 ]
