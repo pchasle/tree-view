@@ -1,4 +1,4 @@
-import { Highlight } from "./styled.ts";
+import styled from "styled-components";
 
 export const HighlightText = ({
   text,
@@ -19,3 +19,9 @@ export const HighlightText = ({
     </>
   );
 };
+
+const Highlight = styled.mark`
+  background-color: yellow;
+  font-weight: bold;
+  border-radius: 2px;
+`;

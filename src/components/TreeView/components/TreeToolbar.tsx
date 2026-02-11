@@ -1,5 +1,5 @@
 import { Button, Checkbox, Search } from "akeneo-design-system";
-import { Toolbar } from "./styled.ts";
+import styled from "styled-components";
 
 type TreeToolbarProps = {
   searchQuery: string;
@@ -36,3 +36,15 @@ export const TreeToolbar = ({
     </Button>
   </Toolbar>
 );
+
+const Toolbar = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+
+  > :first-child {
+    width: 100%;
+  }
+`;

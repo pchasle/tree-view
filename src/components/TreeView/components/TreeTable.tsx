@@ -6,7 +6,7 @@ import {
 } from "akeneo-design-system";
 import { useRef } from "react";
 import type { AnnotatedRow, SortColumn } from "../types.ts";
-import { PlaceholderContainer, ScrollContainer } from "./styled.ts";
+import styled from "styled-components";
 import { TreeRow } from "./TreeRow.tsx";
 
 type TreeTableProps = {
@@ -135,3 +135,16 @@ export const TreeTable = ({
     </ScrollContainer>
   );
 };
+
+const ScrollContainer = styled.div`
+  height: 80vh;
+  overflow-y: auto;
+  contain: strict;
+`;
+
+const PlaceholderContainer = styled.div`
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

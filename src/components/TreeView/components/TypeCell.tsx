@@ -1,6 +1,6 @@
 import { ArrowDownIcon, ArrowRightIcon, Tag } from "akeneo-design-system";
 import type { ProductType } from "../types.ts";
-import { TypeCellWrapper } from "./styled.ts";
+import styled from "styled-components";
 
 export const TypeCell = ({
   type,
@@ -40,3 +40,8 @@ export const TypeCell = ({
       );
   }
 };
+
+const TypeCellWrapper = styled.span<{ $indent: number }>`
+  padding-left: ${({ $indent }) => $indent}px;
+  display: inline-block;
+`;
