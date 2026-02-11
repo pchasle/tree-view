@@ -1,0 +1,78 @@
+import { forwardRef } from "react";
+import { Tag, Tags } from "akeneo-design-system";
+import type { AnnotatedRow } from "../types.ts";
+import { TableRow, ProductImage } from "./styled.ts";
+import { HighlightText } from "./HighlightText.tsx";
+import { TypeCell } from "./TypeCell.tsx";
+import { getRowUrl } from "../utils/url.ts";
+
+type TreeRowProps = {
+  row: AnnotatedRow;
+  debouncedQuery: string;
+  isHighlighted: boolean;
+  isCollapsed: boolean;
+  onToggle: (identifier: string) => void;
+  getAxisTint: (attributeCode: string) => string;
+  "data-index": number;
+};
+
+export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
+  (
+    {
+      row,
+      debouncedQuery,
+      isHighlighted,
+      isCollapsed,
+      onToggle,
+      getAxisTint,
+      "data-index": dataIndex,
+    },
+    ref,
+  ) => (
+    <TableRow
+      ref={ref}
+      data-index={dataIndex}
+      $greyed={!!debouncedQuery && !row.matches}
+      $highlighted={isHighlighted}
+      onClick={() => {
+        window.alert(`Navigate to ${getRowUrl(row)}`);
+      }}
+    >
+      <td>
+        <TypeCell
+          type={row.product_type}
+          isCollapsed={isCollapsed}
+          onToggle={() => onToggle(row.identifier)}
+        />
+      </td>
+      <td title={row.identifier}>
+        <HighlightText text={row.identifier} query={debouncedQuery} />
+      </td>
+      <td>
+        <ProductImage src={row.image} alt={row.label} />
+      </td>
+      <td title={row.label}>
+        <HighlightText text={row.label} query={debouncedQuery} />
+      </td>
+      <td>
+        {row.complete_variant_products
+          ? `${row.complete_variant_products.complete}/${row.complete_variant_products.total}`
+          : ""}
+      </td>
+      <td>
+        {row.axes && row.axes.length > 0 && (
+          <Tags>
+            {row.axes.map((axis) => {
+              const text = `${axis.attribute_label}:${axis.axis_value}`;
+              return (
+                <Tag key={text} tint={getAxisTint(axis.attribute_code)}>
+                  <HighlightText text={text} query={debouncedQuery} />
+                </Tag>
+              );
+            })}
+          </Tags>
+        )}
+      </td>
+    </TableRow>
+  ),
+);
