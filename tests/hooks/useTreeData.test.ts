@@ -8,6 +8,13 @@ jest.mock("react-query", () => ({
   useQuery: jest.fn(),
 }));
 
+jest.mock("../../src/context/DatasetContext", () => ({
+  useDataset: () => ({
+    datasetKey: "test",
+    loadDataset: jest.fn(),
+  }),
+}));
+
 const mockedUseQuery = useQuery as jest.Mock;
 
 const identityComparator = () => 0;

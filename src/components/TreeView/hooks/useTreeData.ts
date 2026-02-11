@@ -2,11 +2,7 @@ import { useMemo } from "react";
 import { useQuery } from "react-query";
 import type { ProductRow, AnnotatedRow } from "../types.ts";
 import { buildTreeOrder, annotateRows } from "../utils/tree.ts";
-
-const fetchProductModels = (): Promise<ProductRow[]> =>
-  new Promise((resolve) => setTimeout(resolve, 250)).then(() =>
-    import("../../product-models.json").then((m) => m.default as ProductRow[]),
-  );
+import { useDataset } from "../../../context/DatasetContext.tsx";
 
 export const useTreeData = (
   comparator: (a: ProductRow, b: ProductRow) => number,
@@ -19,9 +15,11 @@ export const useTreeData = (
   isLoading: boolean;
   isError: boolean;
 } => {
+  const { datasetKey, loadDataset } = useDataset();
+
   const { data, isLoading, isError } = useQuery(
-    "product-models",
-    fetchProductModels,
+    ["product-models", datasetKey],
+    loadDataset,
   );
 
   const rows = useMemo(() => {

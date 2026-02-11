@@ -20,6 +20,13 @@ jest.mock("react-query", () => ({
 }));
 const mockedUseQuery = useQuery as jest.Mock;
 
+jest.mock("../../src/context/DatasetContext", () => ({
+  useDataset: () => ({
+    datasetKey: "test",
+    loadDataset: jest.fn(),
+  }),
+}));
+
 jest.mock("@tanstack/react-virtual", () => ({
   useVirtualizer: (opts: { count: number }) => ({
     getVirtualItems: () =>

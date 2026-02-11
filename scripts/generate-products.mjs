@@ -1,9 +1,3 @@
-import { writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
 const TARGET_ROWS = parseInt(process.argv[2] || '1000', 10);
 
 const MODEL = {
@@ -23,7 +17,7 @@ const SUBMODEL_AXES = [
   {
     attr: 'Fabric',
     attr_code: 'fabric',
-    values: ['Cotton', 'Organic Cotton', 'Tri-Blend'],
+    values: ['Cotton', 'Organic Cotton', 'Tri-Blend', 'Polyester'],
   },
 ];
 
@@ -31,17 +25,17 @@ const VARIANT_AXES = [
   {
     attr: 'Size',
     attr_code: 'size',
-    values: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL'],
+    values: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL', '6XL'],
   },
   {
     attr: 'Fit',
     attr_code: 'fit',
-    values: ['Regular', 'Slim', 'Relaxed', 'Tall'],
+    values: ['Regular', 'Slim', 'Relaxed', 'Tall', 'Athletic', 'Oversized'],
   },
   {
     attr: 'Neckline',
     attr_code: 'neckline',
-    values: ['Crew', 'V-Neck', 'Henley'],
+    values: ['Crew', 'V-Neck', 'Henley', 'Scoop', 'Mock'],
   },
 ];
 
@@ -101,13 +95,18 @@ function generateProducts() {
   const rows = [];
   let techId = 1;
 
-  const submodelCombinations = cartesian(SUBMODEL_AXES);
+  const allSubmodelCombinations = shuffle(cartesian(SUBMODEL_AXES));
   const variantCombinations = cartesian(VARIANT_AXES);
-  const submodelCount = submodelCombinations.length;
   const maxVariantsPerSub = variantCombinations.length;
 
+  const maxSubmodels = TARGET_ROWS <= 1
+    ? 0
+    : Math.max(1, Math.min(allSubmodelCombinations.length, Math.floor((TARGET_ROWS - 1) * 0.15)));
+  const submodelCombinations = allSubmodelCombinations.slice(0, maxSubmodels);
+  const submodelCount = submodelCombinations.length;
+
   const totalVariants = TARGET_ROWS - 1 - submodelCount;
-  const variantCounts = distributeRandom(totalVariants, submodelCount, 1, maxVariantsPerSub);
+  const variantCounts = submodelCount > 0 ? distributeRandom(totalVariants, submodelCount, 0, maxVariantsPerSub) : [];
 
   // Placeholder for the model row — we'll fill in totals after generating submodels
   const modelIndex = 0;
@@ -172,17 +171,15 @@ function generateProducts() {
   return rows;
 }
 
-// Generate and write
+// Generate and write to stdout
 const products = generateProducts();
-const outputPath = join(__dirname, '..', 'src', 'components', 'product-models.json');
-writeFileSync(outputPath, JSON.stringify(products, null, 2) + '\n');
+process.stdout.write(JSON.stringify(products, null, 2) + '\n');
 
-// Print stats
+// Print stats to stderr so they don't pollute piped JSON output
 const models = products.filter(p => p.product_type === 'model').length;
 const submodels = products.filter(p => p.product_type === 'submodel').length;
 const variants = products.filter(p => p.product_type === 'variant').length;
-console.log(`Generated ${products.length} rows (target: ${TARGET_ROWS}):`);
-console.log(`  - ${models} model`);
-console.log(`  - ${submodels} submodels`);
-console.log(`  - ${variants} variants`);
-console.log(`Written to ${outputPath}`);
+console.error(`Generated ${products.length} rows (target: ${TARGET_ROWS}):`);
+console.error(`  - ${models} model`);
+console.error(`  - ${submodels} submodels`);
+console.error(`  - ${variants} variants`);

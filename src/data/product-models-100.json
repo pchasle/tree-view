@@ -1,0 +1,2475 @@
+[
+  {
+    "product_type": "model",
+    "identifier": "tshirt_classic",
+    "technical_id": "1",
+    "label": "Classic T-Shirt",
+    "image": "https://picsum.photos/seed/tshirt_classic/200/200",
+    "parent": null,
+    "complete_variant_products": {
+      "total": 85,
+      "complete": 26
+    }
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_burgundy_organic_cotton",
+    "technical_id": "2",
+    "label": "Classic T-Shirt Burgundy Organic Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_burgundy_organic_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 2,
+      "complete": 1
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Burgundy"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Organic Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_burgundy_organic_cotton_l_regular_crew",
+    "technical_id": "3",
+    "label": "Classic T-Shirt Burgundy Organic Cotton L Regular Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_burgundy_organic_cotton_l_regular_crew/200/200",
+    "parent": "tshirt_classic_burgundy_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_burgundy_organic_cotton_xxs_athletic_mock",
+    "technical_id": "4",
+    "label": "Classic T-Shirt Burgundy Organic Cotton XXS Athletic Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_burgundy_organic_cotton_xxs_athletic_mock/200/200",
+    "parent": "tshirt_classic_burgundy_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_red_organic_cotton",
+    "technical_id": "5",
+    "label": "Classic T-Shirt Red Organic Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_red_organic_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Red"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Organic Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_burgundy_polyester",
+    "technical_id": "6",
+    "label": "Classic T-Shirt Burgundy Polyester",
+    "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Burgundy"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Polyester"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_charcoal_cotton",
+    "technical_id": "7",
+    "label": "Classic T-Shirt Charcoal Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_charcoal_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Charcoal"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_red_tri_blend",
+    "technical_id": "8",
+    "label": "Classic T-Shirt Red Tri-Blend",
+    "image": "https://picsum.photos/seed/tshirt_classic_red_tri_blend/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Red"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Tri-Blend"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_sand_organic_cotton",
+    "technical_id": "9",
+    "label": "Classic T-Shirt Sand Organic Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_sand_organic_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Sand"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Organic Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_black_organic_cotton",
+    "technical_id": "10",
+    "label": "Classic T-Shirt Black Organic Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 78,
+      "complete": 22
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Black"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Organic Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_tall_v_neck",
+    "technical_id": "11",
+    "label": "Classic T-Shirt Black Organic Cotton M Tall V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_tall_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_slim_crew",
+    "technical_id": "12",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Slim Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_slim_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_regular_mock",
+    "technical_id": "13",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Regular Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_regular_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_slim_mock",
+    "technical_id": "14",
+    "label": "Classic T-Shirt Black Organic Cotton M Slim Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_slim_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_tall_scoop",
+    "technical_id": "15",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Tall Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_tall_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xl_tall_crew",
+    "technical_id": "16",
+    "label": "Classic T-Shirt Black Organic Cotton XL Tall Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xl_tall_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xl_slim_mock",
+    "technical_id": "17",
+    "label": "Classic T-Shirt Black Organic Cotton XL Slim Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xl_slim_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_oversized_crew",
+    "technical_id": "18",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Oversized Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_oversized_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_slim_henley",
+    "technical_id": "19",
+    "label": "Classic T-Shirt Black Organic Cotton S Slim Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_slim_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_l_oversized_henley",
+    "technical_id": "20",
+    "label": "Classic T-Shirt Black Organic Cotton L Oversized Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_l_oversized_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_l_tall_v_neck",
+    "technical_id": "21",
+    "label": "Classic T-Shirt Black Organic Cotton L Tall V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_l_tall_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_athletic_scoop",
+    "technical_id": "22",
+    "label": "Classic T-Shirt Black Organic Cotton M Athletic Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_athletic_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_relaxed_crew",
+    "technical_id": "23",
+    "label": "Classic T-Shirt Black Organic Cotton M Relaxed Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_relaxed_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xl_relaxed_v_neck",
+    "technical_id": "24",
+    "label": "Classic T-Shirt Black Organic Cotton XL Relaxed V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xl_relaxed_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxs_athletic_henley",
+    "technical_id": "25",
+    "label": "Classic T-Shirt Black Organic Cotton XXS Athletic Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxs_athletic_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_athletic_v_neck",
+    "technical_id": "26",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Athletic V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_athletic_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_athletic_mock",
+    "technical_id": "27",
+    "label": "Classic T-Shirt Black Organic Cotton M Athletic Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_athletic_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_oversized_crew",
+    "technical_id": "28",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Oversized Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_oversized_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_slim_mock",
+    "technical_id": "29",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Slim Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_slim_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_relaxed_crew",
+    "technical_id": "30",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Relaxed Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_relaxed_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_tall_v_neck",
+    "technical_id": "31",
+    "label": "Classic T-Shirt Black Organic Cotton S Tall V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_tall_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_slim_scoop",
+    "technical_id": "32",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Slim Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_slim_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xl_athletic_crew",
+    "technical_id": "33",
+    "label": "Classic T-Shirt Black Organic Cotton XL Athletic Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xl_athletic_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_regular_henley",
+    "technical_id": "34",
+    "label": "Classic T-Shirt Black Organic Cotton M Regular Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_regular_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_l_regular_scoop",
+    "technical_id": "35",
+    "label": "Classic T-Shirt Black Organic Cotton L Regular Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_l_regular_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_slim_scoop",
+    "technical_id": "36",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Slim Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_slim_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_relaxed_v_neck",
+    "technical_id": "37",
+    "label": "Classic T-Shirt Black Organic Cotton S Relaxed V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_relaxed_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_tall_henley",
+    "technical_id": "38",
+    "label": "Classic T-Shirt Black Organic Cotton M Tall Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_tall_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_relaxed_henley",
+    "technical_id": "39",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Relaxed Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_relaxed_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_oversized_mock",
+    "technical_id": "40",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Oversized Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_oversized_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_athletic_henley",
+    "technical_id": "41",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Athletic Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_athletic_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_athletic_scoop",
+    "technical_id": "42",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Athletic Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_athletic_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_regular_scoop",
+    "technical_id": "43",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Regular Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_regular_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_regular_mock",
+    "technical_id": "44",
+    "label": "Classic T-Shirt Black Organic Cotton M Regular Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_regular_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_6xl_regular_mock",
+    "technical_id": "45",
+    "label": "Classic T-Shirt Black Organic Cotton 6XL Regular Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_6xl_regular_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "6XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_6xl_regular_henley",
+    "technical_id": "46",
+    "label": "Classic T-Shirt Black Organic Cotton 6XL Regular Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_6xl_regular_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "6XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_oversized_v_neck",
+    "technical_id": "47",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Oversized V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_oversized_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_oversized_scoop",
+    "technical_id": "48",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Oversized Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_oversized_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_slim_henley",
+    "technical_id": "49",
+    "label": "Classic T-Shirt Black Organic Cotton M Slim Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_slim_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_relaxed_scoop",
+    "technical_id": "50",
+    "label": "Classic T-Shirt Black Organic Cotton M Relaxed Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_relaxed_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_l_slim_mock",
+    "technical_id": "51",
+    "label": "Classic T-Shirt Black Organic Cotton L Slim Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_l_slim_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxs_regular_v_neck",
+    "technical_id": "52",
+    "label": "Classic T-Shirt Black Organic Cotton XXS Regular V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxs_regular_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_oversized_scoop",
+    "technical_id": "53",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Oversized Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_oversized_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xs_oversized_scoop",
+    "technical_id": "54",
+    "label": "Classic T-Shirt Black Organic Cotton XS Oversized Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xs_oversized_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_oversized_mock",
+    "technical_id": "55",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Oversized Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_oversized_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_6xl_tall_scoop",
+    "technical_id": "56",
+    "label": "Classic T-Shirt Black Organic Cotton 6XL Tall Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_6xl_tall_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "6XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxs_oversized_henley",
+    "technical_id": "57",
+    "label": "Classic T-Shirt Black Organic Cotton XXS Oversized Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxs_oversized_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xl_regular_mock",
+    "technical_id": "58",
+    "label": "Classic T-Shirt Black Organic Cotton XL Regular Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xl_regular_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_6xl_tall_henley",
+    "technical_id": "59",
+    "label": "Classic T-Shirt Black Organic Cotton 6XL Tall Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_6xl_tall_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "6XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_tall_crew",
+    "technical_id": "60",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Tall Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_tall_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_athletic_crew",
+    "technical_id": "61",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Athletic Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_athletic_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_6xl_athletic_henley",
+    "technical_id": "62",
+    "label": "Classic T-Shirt Black Organic Cotton 6XL Athletic Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_6xl_athletic_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "6XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_athletic_v_neck",
+    "technical_id": "63",
+    "label": "Classic T-Shirt Black Organic Cotton M Athletic V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_athletic_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xs_relaxed_v_neck",
+    "technical_id": "64",
+    "label": "Classic T-Shirt Black Organic Cotton XS Relaxed V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xs_relaxed_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_relaxed_mock",
+    "technical_id": "65",
+    "label": "Classic T-Shirt Black Organic Cotton S Relaxed Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_relaxed_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_slim_v_neck",
+    "technical_id": "66",
+    "label": "Classic T-Shirt Black Organic Cotton S Slim V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_slim_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xl_oversized_henley",
+    "technical_id": "67",
+    "label": "Classic T-Shirt Black Organic Cotton XL Oversized Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xl_oversized_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_m_slim_scoop",
+    "technical_id": "68",
+    "label": "Classic T-Shirt Black Organic Cotton M Slim Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_m_slim_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "M"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_regular_mock",
+    "technical_id": "69",
+    "label": "Classic T-Shirt Black Organic Cotton S Regular Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_regular_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxs_regular_henley",
+    "technical_id": "70",
+    "label": "Classic T-Shirt Black Organic Cotton XXS Regular Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxs_regular_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_3xl_tall_v_neck",
+    "technical_id": "71",
+    "label": "Classic T-Shirt Black Organic Cotton 3XL Tall V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_3xl_tall_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "3XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_l_slim_crew",
+    "technical_id": "72",
+    "label": "Classic T-Shirt Black Organic Cotton L Slim Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_l_slim_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_oversized_henley",
+    "technical_id": "73",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Oversized Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_oversized_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xs_relaxed_henley",
+    "technical_id": "74",
+    "label": "Classic T-Shirt Black Organic Cotton XS Relaxed Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xs_relaxed_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_athletic_scoop",
+    "technical_id": "75",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Athletic Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_athletic_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_relaxed_mock",
+    "technical_id": "76",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Relaxed Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_relaxed_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_l_tall_henley",
+    "technical_id": "77",
+    "label": "Classic T-Shirt Black Organic Cotton L Tall Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_l_tall_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "L"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxs_slim_mock",
+    "technical_id": "78",
+    "label": "Classic T-Shirt Black Organic Cotton XXS Slim Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxs_slim_mock/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_relaxed_scoop",
+    "technical_id": "79",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Relaxed Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_relaxed_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxl_relaxed_v_neck",
+    "technical_id": "80",
+    "label": "Classic T-Shirt Black Organic Cotton XXL Relaxed V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxl_relaxed_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_s_tall_crew",
+    "technical_id": "81",
+    "label": "Classic T-Shirt Black Organic Cotton S Tall Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_s_tall_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_relaxed_henley",
+    "technical_id": "82",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Relaxed Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_relaxed_henley/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_athletic_scoop",
+    "technical_id": "83",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Athletic Scoop",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_athletic_scoop/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Athletic"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Scoop"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xs_slim_crew",
+    "technical_id": "84",
+    "label": "Classic T-Shirt Black Organic Cotton XS Slim Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xs_slim_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_5xl_regular_v_neck",
+    "technical_id": "85",
+    "label": "Classic T-Shirt Black Organic Cotton 5XL Regular V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_5xl_regular_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_6xl_relaxed_crew",
+    "technical_id": "86",
+    "label": "Classic T-Shirt Black Organic Cotton 6XL Relaxed Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_6xl_relaxed_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "6XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Relaxed"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_4xl_slim_v_neck",
+    "technical_id": "87",
+    "label": "Classic T-Shirt Black Organic Cotton 4XL Slim V-Neck",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_4xl_slim_v_neck/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "4XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "V-Neck"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_organic_cotton_xxs_slim_crew",
+    "technical_id": "88",
+    "label": "Classic T-Shirt Black Organic Cotton XXS Slim Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_organic_cotton_xxs_slim_crew/200/200",
+    "parent": "tshirt_classic_black_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XXS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Slim"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_heather_grey_polyester",
+    "technical_id": "89",
+    "label": "Classic T-Shirt Heather Grey Polyester",
+    "image": "https://picsum.photos/seed/tshirt_classic_heather_grey_polyester/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Heather Grey"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Polyester"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_white_cotton",
+    "technical_id": "90",
+    "label": "Classic T-Shirt White Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_white_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "White"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_black_cotton",
+    "technical_id": "91",
+    "label": "Classic T-Shirt Black Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Black"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_white_organic_cotton",
+    "technical_id": "92",
+    "label": "Classic T-Shirt White Organic Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_white_organic_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 2,
+      "complete": 2
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "White"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Organic Cotton"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_white_organic_cotton_5xl_regular_crew",
+    "technical_id": "93",
+    "label": "Classic T-Shirt White Organic Cotton 5XL Regular Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_white_organic_cotton_5xl_regular_crew/200/200",
+    "parent": "tshirt_classic_white_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "5XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_white_organic_cotton_s_regular_mock",
+    "technical_id": "94",
+    "label": "Classic T-Shirt White Organic Cotton S Regular Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_white_organic_cotton_s_regular_mock/200/200",
+    "parent": "tshirt_classic_white_organic_cotton",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "S"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_white_polyester",
+    "technical_id": "95",
+    "label": "Classic T-Shirt White Polyester",
+    "image": "https://picsum.photos/seed/tshirt_classic_white_polyester/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "White"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Polyester"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_black_tri_blend",
+    "technical_id": "96",
+    "label": "Classic T-Shirt Black Tri-Blend",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_tri_blend/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 3,
+      "complete": 1
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Black"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Tri-Blend"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_tri_blend_xl_oversized_crew",
+    "technical_id": "97",
+    "label": "Classic T-Shirt Black Tri-Blend XL Oversized Crew",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_tri_blend_xl_oversized_crew/200/200",
+    "parent": "tshirt_classic_black_tri_blend",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XL"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Oversized"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Crew"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_tri_blend_xs_tall_mock",
+    "technical_id": "98",
+    "label": "Classic T-Shirt Black Tri-Blend XS Tall Mock",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_tri_blend_xs_tall_mock/200/200",
+    "parent": "tshirt_classic_black_tri_blend",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Tall"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Mock"
+      }
+    ]
+  },
+  {
+    "product_type": "variant",
+    "identifier": "tshirt_classic_black_tri_blend_xs_regular_henley",
+    "technical_id": "99",
+    "label": "Classic T-Shirt Black Tri-Blend XS Regular Henley",
+    "image": "https://picsum.photos/seed/tshirt_classic_black_tri_blend_xs_regular_henley/200/200",
+    "parent": "tshirt_classic_black_tri_blend",
+    "axes": [
+      {
+        "attribute_code": "size",
+        "attribute_label": "Size",
+        "axis_value": "XS"
+      },
+      {
+        "attribute_code": "fit",
+        "attribute_label": "Fit",
+        "axis_value": "Regular"
+      },
+      {
+        "attribute_code": "neckline",
+        "attribute_label": "Neckline",
+        "axis_value": "Henley"
+      }
+    ]
+  },
+  {
+    "product_type": "submodel",
+    "identifier": "tshirt_classic_sky_blue_organic_cotton",
+    "technical_id": "100",
+    "label": "Classic T-Shirt Sky Blue Organic Cotton",
+    "image": "https://picsum.photos/seed/tshirt_classic_sky_blue_organic_cotton/200/200",
+    "parent": "tshirt_classic",
+    "complete_variant_products": {
+      "total": 0,
+      "complete": 0
+    },
+    "axes": [
+      {
+        "attribute_code": "color",
+        "attribute_label": "Color",
+        "axis_value": "Sky Blue"
+      },
+      {
+        "attribute_code": "fabric",
+        "attribute_label": "Fabric",
+        "axis_value": "Organic Cotton"
+      }
+    ]
+  }
+]
