@@ -1,7 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 import type { PersistedState, ProductType } from "./types.ts";
 import { useAxisTint } from "./hooks/useAxisTint.ts";
-import { useDebouncedValue } from "./hooks/useDebouncedValue.ts";
 import { useTreeSort } from "./hooks/useTreeSort.ts";
 import { useCollapseState } from "./hooks/useCollapseState.ts";
 import { usePersistedTreeState } from "./hooks/usePersistedTreeState.ts";
@@ -9,7 +8,7 @@ import { useTreeData } from "./hooks/useTreeData.ts";
 import { TreeToolbar } from "./components/TreeToolbar.tsx";
 import { TreeTable } from "./components/TreeTable.tsx";
 import { TreeViewModal } from "./components/TreeViewModal.tsx";
-import { Helper } from "akeneo-design-system";
+import { Helper, useDebounce } from "akeneo-design-system";
 
 type TreeViewProps = {
   product: {
@@ -21,7 +20,7 @@ type TreeViewProps = {
 export const TreeView = ({ product }: TreeViewProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showHidden, setShowHidden] = useState(false);
-  const debouncedQuery = useDebouncedValue(searchQuery, 300);
+  const debouncedQuery = useDebounce(searchQuery, 300);
 
   const {
     sortColumn,
