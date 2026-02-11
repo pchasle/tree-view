@@ -216,8 +216,8 @@ export const TreeView = () => {
   const [collapsedSubmodels, setCollapsedSubmodels] = useState<Set<string>>(
     new Set(),
   );
-  const [sortColumn, setSortColumn] = useState<"identifier" | "label" | null>(
-    null,
+  const [sortColumn, setSortColumn] = useState<"identifier" | "label">(
+    "identifier",
   );
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -237,7 +237,6 @@ export const TreeView = () => {
   }, [data]);
 
   const comparator = useMemo(() => {
-    if (!sortColumn) return undefined;
     return (a: ProductModel, b: ProductModel) => {
       const aVal = a[sortColumn].toLowerCase();
       const bVal = b[sortColumn].toLowerCase();
@@ -267,11 +266,8 @@ export const TreeView = () => {
     if (sortColumn !== column) {
       setSortColumn(column);
       setSortDirection("asc");
-    } else if (sortDirection === "asc") {
-      setSortDirection("desc");
     } else {
-      setSortColumn(null);
-      setSortDirection("asc");
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     }
   };
 
