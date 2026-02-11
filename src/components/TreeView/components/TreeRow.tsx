@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Image, Table, Tag, Tags } from "akeneo-design-system";
+import { Badge, Image, Table, Tag, Tags } from "akeneo-design-system";
 import type { AnnotatedRow } from "../types.ts";
 import { HighlightText } from "./HighlightText.tsx";
 import { TypeCell } from "./TypeCell.tsx";
@@ -60,9 +60,21 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
         <HighlightText text={row.label} query={debouncedQuery} />
       </Table.Cell>
       <Table.Cell>
-        {row.complete_variant_products
-          ? `${row.complete_variant_products.complete}/${row.complete_variant_products.total}`
-          : ""}
+        {row.complete_variant_products && (
+          <Badge
+            level={
+              row.complete_variant_products.complete === 0
+                ? "danger"
+                : row.complete_variant_products.complete ===
+                    row.complete_variant_products.total
+                  ? "primary"
+                  : "warning"
+            }
+          >
+            {row.complete_variant_products.complete}/
+            {row.complete_variant_products.total}
+          </Badge>
+        )}
       </Table.Cell>
       <Table.Cell>
         {row.axes && row.axes.length > 0 && (
