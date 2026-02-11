@@ -224,7 +224,7 @@ const TypeCell = ({
 // --- Session Storage Helpers ---
 
 type PersistedState = {
-  sortColumn: "identifier" | "label";
+  sortColumn: "identifier" | "label" | "variant";
   sortDirection: "asc" | "desc";
   searchQuery: string;
   showHidden: boolean;
@@ -278,7 +278,7 @@ export const TreeView = () => {
   const [collapsedSubmodels, setCollapsedSubmodels] = useState<Set<string>>(
     new Set(),
   );
-  const [sortColumn, setSortColumn] = useState<"identifier" | "label">(
+  const [sortColumn, setSortColumn] = useState<"identifier" | "label" | "variant">(
     "identifier",
   );
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
@@ -312,6 +312,14 @@ export const TreeView = () => {
 
   const comparator = useMemo(() => {
     return (a: ProductModel, b: ProductModel) => {
+      if (sortColumn === "variant") {
+        const aVariant = a.complete_variant_products;
+        const bVariant = b.complete_variant_products;
+        const aTotal = aVariant ? aVariant.total : -1;
+        const bTotal = bVariant ? bVariant.total : -1;
+        const cmp = aTotal - bTotal || (aVariant?.complete ?? -1) - (bVariant?.complete ?? -1);
+        return sortDirection === "asc" ? cmp : -cmp;
+      }
       const aVal = a[sortColumn].toLowerCase();
       const bVal = b[sortColumn].toLowerCase();
       const cmp = aVal.localeCompare(bVal);
@@ -336,7 +344,7 @@ export const TreeView = () => {
     });
   }, [data, comparator, debouncedQuery, showHidden, collapsedSubmodels]);
 
-  const handleSortClick = (column: "identifier" | "label") => {
+  const handleSortClick = (column: "identifier" | "label" | "variant") => {
     if (sortColumn !== column) {
       setSortColumn(column);
       setSortDirection("asc");
@@ -345,7 +353,7 @@ export const TreeView = () => {
     }
   };
 
-  const getSortIndicator = (column: "identifier" | "label") => {
+  const getSortIndicator = (column: "identifier" | "label" | "variant") => {
     if (sortColumn !== column) return "";
     return sortDirection === "asc" ? " ↑" : " ↓";
   };
@@ -413,7 +421,9 @@ export const TreeView = () => {
             <SortableHeader onClick={() => handleSortClick("label")}>
               Label{getSortIndicator("label")}
             </SortableHeader>
-            <th>Variant</th>
+            <SortableHeader onClick={() => handleSortClick("variant")}>
+              Variant{getSortIndicator("variant")}
+            </SortableHeader>
             <th>Variation axis</th>
           </tr>
         </thead>

@@ -6,8 +6,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Single product model: "Classic T-Shirt" with realistic axis combinations
 // Submodel axes: Color × Fabric (10 × 3 = 30 submodels)
-// Variant axes: Size × Fit (8 × 4 = 32 variants per submodel)
-// Total: 1 + 30 + 30×32 = 991 rows
+// Variant axes: Size × Fit (8 × 4 = 32 possible variants)
+// Each submodel gets a random subset of 1–32 variants, so row count varies per run
 
 const MODEL = {
   name: 'Classic T-Shirt',
@@ -43,6 +43,15 @@ function slugify(str) {
   return str.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/(^_|_$)/g, '');
 }
 
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function cartesian(axes) {
   if (axes.length === 0) return [[]];
   const [first, ...rest] = axes;
@@ -63,10 +72,8 @@ function generateProducts() {
   const submodelCombinations = cartesian(SUBMODEL_AXES);
   const variantCombinations = cartesian(VARIANT_AXES);
 
-  const totalVariants = submodelCombinations.length * variantCombinations.length;
-  const completeCount = Math.floor(Math.random() * (totalVariants + 1));
-
-  // Single model
+  // Placeholder for the model row — we'll fill in totals after generating submodels
+  const modelIndex = 0;
   rows.push({
     product_type: 'model',
     identifier: MODEL.slug,
@@ -74,8 +81,11 @@ function generateProducts() {
     label: MODEL.name,
     image: `https://picsum.photos/seed/${MODEL.slug}/200/200`,
     parent: null,
-    complete_variant_products: { total: totalVariants, complete: completeCount },
+    complete_variant_products: { total: 0, complete: 0 },
   });
+
+  let modelTotal = 0;
+  let modelComplete = 0;
 
   // Submodels and their variants
   for (const subCombo of submodelCombinations) {
@@ -83,7 +93,13 @@ function generateProducts() {
     const subIdentifier = `${MODEL.slug}_${subSuffix}`;
     const subLabel = `${MODEL.name} ${subCombo.map(a => a.value).join(' ')}`;
 
-    const subComplete = Math.floor(Math.random() * (variantCombinations.length + 1));
+    // Each submodel gets a random subset of variant combinations (at least 1)
+    const variantCount = Math.floor(Math.random() * variantCombinations.length) + 1;
+    const selectedVariants = shuffle(variantCombinations).slice(0, variantCount);
+
+    const subComplete = Math.floor(Math.random() * (variantCount + 1));
+    modelTotal += variantCount;
+    modelComplete += subComplete;
 
     rows.push({
       product_type: 'submodel',
@@ -92,11 +108,11 @@ function generateProducts() {
       label: subLabel,
       image: `https://picsum.photos/seed/${subIdentifier}/200/200`,
       parent: MODEL.slug,
-      complete_variant_products: { total: variantCombinations.length, complete: subComplete },
+      complete_variant_products: { total: variantCount, complete: subComplete },
       axes: subCombo.map(a => ({ attribute_label: a.attr, axis_value: a.value })),
     });
 
-    for (const varCombo of variantCombinations) {
+    for (const varCombo of selectedVariants) {
       const varSuffix = varCombo.map(a => slugify(a.value)).join('_');
       const varIdentifier = `${subIdentifier}_${varSuffix}`;
       const varLabel = `${subLabel} ${varCombo.map(a => a.value).join(' ')}`;
@@ -112,6 +128,9 @@ function generateProducts() {
       });
     }
   }
+
+  // Update model-level totals
+  rows[modelIndex].complete_variant_products = { total: modelTotal, complete: modelComplete };
 
   return rows;
 }
