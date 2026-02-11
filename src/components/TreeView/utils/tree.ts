@@ -19,7 +19,10 @@ export const buildTreeOrder = (
     if (!children) return;
     const sorted = comparator ? [...children].sort(comparator) : children;
     for (const child of sorted) {
-      result.push(child);
+      result.push({
+        ...child,
+        hasChildren: childrenByParent.has(child.identifier),
+      });
       walk(child.identifier);
     }
   };

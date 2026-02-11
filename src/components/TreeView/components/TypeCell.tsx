@@ -5,10 +5,12 @@ import styled from "styled-components";
 export const TypeCell = ({
   type,
   isCollapsed,
+  hasChildren,
   onToggle,
 }: {
   type: ProductType;
   isCollapsed?: boolean;
+  hasChildren?: boolean;
   onToggle?: () => void;
 }) => {
   switch (type) {
@@ -21,14 +23,18 @@ export const TypeCell = ({
     case "submodel":
       return (
         <TypeCellWrapper $indent={0}>
-          <span
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggle?.();
-            }}
-          >
-            {isCollapsed ? <ArrowRightIcon /> : <ArrowDownIcon />}
-          </span>{" "}
+          {hasChildren && (
+            <>
+              <span
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggle?.();
+                }}
+              >
+                {isCollapsed ? <ArrowRightIcon /> : <ArrowDownIcon />}
+              </span>{" "}
+            </>
+          )}
           <Tag tint="dark_cyan">{type}</Tag>
         </TypeCellWrapper>
       );

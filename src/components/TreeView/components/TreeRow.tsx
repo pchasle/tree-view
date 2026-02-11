@@ -45,6 +45,7 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
           <TypeCell
             type={row.product_type}
             isCollapsed={isCollapsed}
+            hasChildren={row.hasChildren}
             onToggle={() => onToggle(row.identifier)}
           />
         </Table.Cell>

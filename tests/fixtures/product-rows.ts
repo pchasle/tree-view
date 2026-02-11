@@ -9,6 +9,7 @@ export const makeModel = (
   label: "Classic T-Shirt",
   image: "https://example.com/model.jpg",
   parent: null,
+  hasChildren: false,
   complete_variant_products: { total: 500, complete: 277 },
   ...overrides,
 });
@@ -22,6 +23,7 @@ export const makeSubmodel = (
   label: "Classic T-Shirt White Cotton",
   image: "https://example.com/submodel.jpg",
   parent: "tshirt_classic",
+  hasChildren: false,
   complete_variant_products: { total: 24, complete: 11 },
   axes: [
     {
@@ -47,6 +49,7 @@ export const makeVariant = (
   label: "Classic T-Shirt White Cotton 3XL",
   image: "https://example.com/variant.jpg",
   parent: "tshirt_classic_white_cotton",
+  hasChildren: false,
   axes: [
     {
       attribute_code: "size",

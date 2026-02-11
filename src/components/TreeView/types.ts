@@ -13,6 +13,7 @@ export type ProductRow = {
     axis_value: string;
   }[];
   complete_variant_products?: { total: number; complete: number };
+  hasChildren: boolean;
 };
 
 export type AnnotatedRow = ProductRow & {
