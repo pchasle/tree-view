@@ -17,6 +17,8 @@ import { useTreeData } from "./hooks/useTreeData.ts";
 import { useTreeSort } from "./hooks/useTreeSort.ts";
 import type { PersistedState, ProductType } from "./types.ts";
 
+const VARIANT_LIMIT = 1000;
+
 type TreeViewProps = {
   product: {
     product_type: ProductType;
@@ -124,11 +126,13 @@ export const TreeView = ({ product }: TreeViewProps) => {
         getSortDirection={getSortDirection}
         onDirectionChange={handleDirectionChange}
       />
-      <Helper level="warning">
-        {translate(
-          "Some warning message, only in case the product model has more than 1000 variants.",
-        )}
-      </Helper>
+      {rows.length >= VARIANT_LIMIT && (
+        <Helper level="warning">
+          {translate(
+            `This product model has more than ${VARIANT_LIMIT} variants. Only the first ${VARIANT_LIMIT} are displayed and available for search.`,
+          )}
+        </Helper>
+      )}
     </TreeViewModal>
   );
 };

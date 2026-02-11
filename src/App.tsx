@@ -6,7 +6,7 @@ import { TreeView } from "./components/TreeView";
 function App() {
   return (
     <ThemeProvider theme={pimTheme}>
-      <TreeView product={{ product_type: "variant", technical_id: "88" }} />
+      <TreeView product={{ product_type: "variant", technical_id: "64" }} />
     </ThemeProvider>
   );
 }

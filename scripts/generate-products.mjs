@@ -4,10 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Single product model: "Classic T-Shirt" with realistic axis combinations
-// Submodel axes: Color × Fabric (10 × 3 = 30 submodels)
-// Variant axes: Size × Fit (8 × 4 = 32 possible variants)
-// Each submodel gets a random subset of 1–32 variants, so row count varies per run
+const TARGET_ROWS = parseInt(process.argv[2] || '1000', 10);
 
 const MODEL = {
   name: 'Classic T-Shirt',
@@ -41,6 +38,11 @@ const VARIANT_AXES = [
     attr_code: 'fit',
     values: ['Regular', 'Slim', 'Relaxed', 'Tall'],
   },
+  {
+    attr: 'Neckline',
+    attr_code: 'neckline',
+    values: ['Crew', 'V-Neck', 'Henley'],
+  },
 ];
 
 function slugify(str) {
@@ -69,12 +71,43 @@ function cartesian(axes) {
   return result;
 }
 
+// Distribute `total` into `n` buckets, each between `min` and `max`, with randomness.
+function distributeRandom(total, n, min, max) {
+  if (n * min > total || n * max < total) {
+    throw new Error(`Cannot distribute ${total} into ${n} buckets with min=${min}, max=${max}`);
+  }
+
+  // Start everyone at min, then distribute the remainder randomly
+  const counts = new Array(n).fill(min);
+  let remainder = total - n * min;
+
+  // Build a pool of indices that can still receive more
+  while (remainder > 0) {
+    const eligible = [];
+    for (let i = 0; i < n; i++) {
+      if (counts[i] < max) eligible.push(i);
+    }
+    const idx = eligible[Math.floor(Math.random() * eligible.length)];
+    const room = Math.min(max - counts[idx], remainder);
+    const add = Math.floor(Math.random() * room) + 1;
+    counts[idx] += add;
+    remainder -= add;
+  }
+
+  return shuffle(counts);
+}
+
 function generateProducts() {
   const rows = [];
   let techId = 1;
 
   const submodelCombinations = cartesian(SUBMODEL_AXES);
   const variantCombinations = cartesian(VARIANT_AXES);
+  const submodelCount = submodelCombinations.length;
+  const maxVariantsPerSub = variantCombinations.length;
+
+  const totalVariants = TARGET_ROWS - 1 - submodelCount;
+  const variantCounts = distributeRandom(totalVariants, submodelCount, 1, maxVariantsPerSub);
 
   // Placeholder for the model row — we'll fill in totals after generating submodels
   const modelIndex = 0;
@@ -92,13 +125,13 @@ function generateProducts() {
   let modelComplete = 0;
 
   // Submodels and their variants
-  for (const subCombo of submodelCombinations) {
+  for (let i = 0; i < submodelCombinations.length; i++) {
+    const subCombo = submodelCombinations[i];
     const subSuffix = subCombo.map(a => slugify(a.value)).join('_');
     const subIdentifier = `${MODEL.slug}_${subSuffix}`;
     const subLabel = `${MODEL.name} ${subCombo.map(a => a.value).join(' ')}`;
 
-    // Each submodel gets a random subset of variant combinations (at least 1)
-    const variantCount = Math.floor(Math.random() * variantCombinations.length) + 1;
+    const variantCount = variantCounts[i];
     const selectedVariants = shuffle(variantCombinations).slice(0, variantCount);
 
     const subComplete = Math.floor(Math.random() * (variantCount + 1));
@@ -148,7 +181,7 @@ writeFileSync(outputPath, JSON.stringify(products, null, 2) + '\n');
 const models = products.filter(p => p.product_type === 'model').length;
 const submodels = products.filter(p => p.product_type === 'submodel').length;
 const variants = products.filter(p => p.product_type === 'variant').length;
-console.log(`Generated ${products.length} rows:`);
+console.log(`Generated ${products.length} rows (target: ${TARGET_ROWS}):`);
 console.log(`  - ${models} model`);
 console.log(`  - ${submodels} submodels`);
 console.log(`  - ${variants} variants`);
