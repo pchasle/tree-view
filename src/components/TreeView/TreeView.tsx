@@ -126,7 +126,7 @@ export const TreeView = ({ product }: TreeViewProps) => {
         getSortDirection={getSortDirection}
         onDirectionChange={handleDirectionChange}
       />
-      {rows.length >= VARIANT_LIMIT && (
+      {data && data.length >= VARIANT_LIMIT && (
         <Helper level="warning">
           {translate(
             `This product model has more than ${VARIANT_LIMIT} variants. Only the first ${VARIANT_LIMIT} are displayed and available for search.`,
