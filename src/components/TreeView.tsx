@@ -154,12 +154,13 @@ const SortableHeader = styled.th`
   }
 `;
 
-const TableRow = styled.tr<{ $greyed?: boolean }>`
+const TableRow = styled.tr<{ $greyed?: boolean; $highlighted?: boolean }>`
   opacity: ${({ $greyed }) => ($greyed ? 0.35 : 1)};
   cursor: pointer;
+  background-color: ${({ $highlighted }) => ($highlighted ? "#e3f2fd" : "transparent")};
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: ${({ $highlighted }) => ($highlighted ? "#bbdefb" : "#f0f0f0")};
   }
 `;
 
@@ -257,7 +258,14 @@ const loadState = (rootId: string): PersistedState | null => {
 
 // --- Main Component ---
 
-export const TreeView = () => {
+type TreeViewProps = {
+  product: {
+    product_type: ProductType;
+    technical_id: string;
+  };
+};
+
+export const TreeView = ({ product }: TreeViewProps) => {
   const { data, isLoading, isError } = useQuery(
     "product-models",
     fetchProductModels,
@@ -432,6 +440,7 @@ export const TreeView = () => {
             <TableRow
               key={row.identifier}
               $greyed={!!debouncedQuery && !row.matches}
+              $highlighted={row.technical_id === product.technical_id}
               onClick={() => {
                 window.alert(`Navigate to ${getRowUrl(row)}`);
               }}
