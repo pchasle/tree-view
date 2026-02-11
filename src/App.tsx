@@ -8,11 +8,11 @@ function App() {
     <ThemeProvider theme={pimTheme}>
       <div>
         Note for testers: Opened tree view from variant
-        "tshirt_classic_white_tri_blend_m_tall" so it should be higlighted in
+        "tshirt_classic_black_cotton_3xl_tall" so it should be higlighted in
         blue.
       </div>
       <br />
-      <TreeView product={{ product_type: "variant", technical_id: "62" }} />
+      <TreeView product={{ product_type: "variant", technical_id: "88" }} />
     </ThemeProvider>
   );
 }
