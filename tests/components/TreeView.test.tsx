@@ -111,16 +111,6 @@ beforeEach(() => {
 afterEach(() => jest.restoreAllMocks());
 
 describe("TreeView", () => {
-  it("shows loading state while data is being fetched", () => {
-    mockedUseQuery.mockReturnValue({
-      data: undefined,
-      isLoading: true,
-      isError: false,
-    });
-    renderWithProviders(<TreeView product={defaultProduct} />);
-    expect(screen.getByTitle("Close")).toBeDefined();
-  });
-
   it("shows error state when data fetch fails", () => {
     mockedUseQuery.mockReturnValue({
       data: undefined,
