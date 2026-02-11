@@ -197,4 +197,74 @@ describe("TreeView", () => {
     expect(screen.getByText("variant_red_m")).toBeDefined();
     expect(screen.getByText("variant_cotton_l")).toBeDefined();
   });
+
+  it("hides only the toggled submodel's children when its collapse arrow is clicked", () => {
+    renderWithProviders(<TreeView product={defaultProduct} />);
+
+    // Both submodels have a "Collapse" arrow button
+    const collapseButtons = screen.getAllByTitle("Collapse");
+    // Click the first one (sub_color)
+    fireEvent.click(collapseButtons[0]);
+
+    // sub_color's variants should be hidden
+    expect(screen.queryByText("variant_red_s")).toBeNull();
+    expect(screen.queryByText("variant_red_m")).toBeNull();
+
+    // sub_fabric's variant should still be visible
+    expect(screen.getByText("variant_cotton_l")).toBeDefined();
+  });
+
+  it("shows non-matching rows when 'Show hidden products' is checked during search", () => {
+    renderWithProviders(<TreeView product={defaultProduct} />);
+    const searchInput = screen.getByPlaceholderText("Search...");
+    fireEvent.change(searchInput, { target: { value: "Red Small" } });
+
+    // By default, non-matching rows are hidden
+    expect(screen.queryByText("sub_fabric")).toBeNull();
+
+    // Enable "Show hidden products"
+    fireEvent.click(screen.getByText("Show hidden products"));
+
+    // Non-matching rows should now be visible
+    expect(screen.getByText("sub_fabric")).toBeDefined();
+    expect(screen.getByText("variant_cotton_l")).toBeDefined();
+  });
+
+  it("filters rows when searching by axis value", () => {
+    renderWithProviders(<TreeView product={defaultProduct} />);
+    const searchInput = screen.getByPlaceholderText("Search...");
+    fireEvent.change(searchInput, { target: { value: "Color:Red" } });
+
+    // sub_color has axis Color:Red, so it and its ancestors should be visible
+    expect(screen.getByText("root_model")).toBeDefined();
+    expect(screen.getByText("sub_color")).toBeDefined();
+
+    // The other branch should be filtered out
+    expect(screen.queryByText("sub_fabric")).toBeNull();
+    expect(screen.queryByText("variant_cotton_l")).toBeNull();
+  });
+
+  it("shows variant limit warning when data has 1000 or more items", () => {
+    const largeData: ProductRow[] = [
+      makeModel({ identifier: "root", label: "Root", parent: null }),
+    ];
+    for (let i = 0; i < 999; i++) {
+      largeData.push(
+        makeVariant({
+          identifier: `variant_${i}`,
+          technical_id: `${i + 10}`,
+          label: `Variant ${i}`,
+          parent: "root",
+        }),
+      );
+    }
+    mockedUseQuery.mockReturnValue({
+      data: largeData,
+      isLoading: false,
+      isError: false,
+    });
+
+    renderWithProviders(<TreeView product={defaultProduct} />);
+    expect(screen.getByText(/more than 1000 variants/)).toBeDefined();
+  });
 });
