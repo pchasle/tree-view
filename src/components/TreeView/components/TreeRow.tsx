@@ -87,7 +87,11 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
               {row.axes.map((axis) => {
                 const text = `${axis.attribute_label}:${axis.axis_value}`;
                 return (
-                  <Tag key={text} tint={getAxisTint(axis.attribute_code)}>
+                  <Tag
+                    key={text}
+                    title={text}
+                    tint={getAxisTint(axis.attribute_code)}
+                  >
                     <HighlightText text={text} query={debouncedQuery} />
                   </Tag>
                 );

@@ -2,17 +2,20 @@ import { useMemo, useCallback } from "react";
 import type { ProductRow } from "../types.ts";
 
 const AXIS_TINT_PALETTE = [
-  "green",
-  "dark_blue",
-  "purple",
-  "dark_purple",
-  "yellow",
-  "red",
+  "blue",
+  "orange",
   "forest_green",
   "hot_pink",
+  "dark_cyan",
+  "red",
+  "purple",
+  "yellow",
+  "dark_blue",
   "coral_red",
-  "orange",
+  "olive_green",
+  "dark_purple",
   "chocolate",
+  "green",
 ] as const;
 
 export const useAxisTint = (data: ProductRow[] | undefined) => {
