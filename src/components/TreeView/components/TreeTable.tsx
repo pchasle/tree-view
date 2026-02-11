@@ -37,7 +37,7 @@ export const TreeTable = ({
     count: rows.length,
     getScrollElement: () => scrollContainerRef.current,
     estimateSize: () => 65,
-    overscan: 5,
+    overscan: 10,
   });
 
   const virtualItems = rowVirtualizer.getVirtualItems();

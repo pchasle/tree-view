@@ -8,6 +8,7 @@ import { usePersistedTreeState } from "./hooks/usePersistedTreeState.ts";
 import { useTreeData } from "./hooks/useTreeData.ts";
 import { TreeToolbar } from "./components/TreeToolbar.tsx";
 import { TreeTable } from "./components/TreeTable.tsx";
+import { Helper } from "akeneo-design-system";
 
 type TreeViewProps = {
   product: {
@@ -101,6 +102,10 @@ export const TreeView = ({ product }: TreeViewProps) => {
         getSortDirection={getSortDirection}
         onDirectionChange={handleDirectionChange}
       />
+      <Helper level="warning">
+        Some warning message, only in case the product model has more than 1000
+        variants.
+      </Helper>
     </>
   );
 };
