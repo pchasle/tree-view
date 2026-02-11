@@ -205,12 +205,58 @@ const TypeCell = ({
   }
 };
 
+// --- Session Storage Helpers ---
+
+type PersistedState = {
+  sortColumn: "identifier" | "label";
+  sortDirection: "asc" | "desc";
+  searchQuery: string;
+  showHidden: boolean;
+  collapsedSubmodels: string[];
+};
+
+const getRootIdentifier = (data: ProductModel[]): string => {
+  const root = data.find((item) => item.parent === null);
+  if (!root) throw new Error("Root product model not found in data");
+  return root.identifier;
+};
+
+const saveState = (rootId: string, state: PersistedState): void => {
+  try {
+    sessionStorage.setItem(`tree-view:${rootId}`, JSON.stringify(state));
+  } catch {
+    // ignore quota errors
+  }
+};
+
+const loadState = (rootId: string): PersistedState | null => {
+  try {
+    const raw = sessionStorage.getItem(`tree-view:${rootId}`);
+    if (!raw) return null;
+    return JSON.parse(raw) as PersistedState;
+  } catch {
+    return null;
+  }
+};
+
 // --- Main Component ---
 
 export const TreeView = () => {
   const { data, isLoading, isError } = useQuery(
     "product-models",
     fetchProductModels,
+    {
+      onSuccess: (data) => {
+        const rootId = getRootIdentifier(data);
+        const stored = loadState(rootId);
+        if (!stored) return;
+        setSortColumn(stored.sortColumn);
+        setSortDirection(stored.sortDirection);
+        setSearchQuery(stored.searchQuery);
+        setShowHidden(stored.showHidden);
+        setCollapsedSubmodels(new Set(stored.collapsedSubmodels));
+      },
+    },
   );
 
   const [collapsedSubmodels, setCollapsedSubmodels] = useState<Set<string>>(
@@ -228,6 +274,18 @@ export const TreeView = () => {
     const timer = setTimeout(() => setDebouncedQuery(searchQuery), 300);
     return () => clearTimeout(timer);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (!data) return;
+    const rootId = getRootIdentifier(data);
+    saveState(rootId, {
+      sortColumn,
+      sortDirection,
+      searchQuery,
+      showHidden,
+      collapsedSubmodels: [...collapsedSubmodels],
+    });
+  }, [data, sortColumn, sortDirection, searchQuery, showHidden, collapsedSubmodels]);
 
   const allSubmodelIds = useMemo(() => {
     if (!data) return [];
