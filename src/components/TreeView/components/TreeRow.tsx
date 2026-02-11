@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
-import { Tag, Tags } from "akeneo-design-system";
+import { Image, Table, Tag, Tags } from "akeneo-design-system";
 import type { AnnotatedRow } from "../types.ts";
-import { TableRow, ProductImage } from "./styled.ts";
 import { HighlightText } from "./HighlightText.tsx";
 import { TypeCell } from "./TypeCell.tsx";
 import { getRowUrl } from "../utils/url.ts";
@@ -29,37 +28,39 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
     },
     ref,
   ) => (
-    <TableRow
+    <Table.Row
       ref={ref}
       data-index={dataIndex}
-      $greyed={!!debouncedQuery && !row.matches}
-      $highlighted={isHighlighted}
+      isSelected={isHighlighted}
+      style={
+        debouncedQuery && !row.matches ? { opacity: 0.35 } : undefined
+      }
       onClick={() => {
         window.alert(`Navigate to ${getRowUrl(row)}`);
       }}
     >
-      <td>
+      <Table.Cell>
         <TypeCell
           type={row.product_type}
           isCollapsed={isCollapsed}
           onToggle={() => onToggle(row.identifier)}
         />
-      </td>
-      <td title={row.identifier}>
+      </Table.Cell>
+      <Table.Cell title={row.identifier}>
         <HighlightText text={row.identifier} query={debouncedQuery} />
-      </td>
-      <td>
-        <ProductImage src={row.image} alt={row.label} />
-      </td>
-      <td title={row.label}>
+      </Table.Cell>
+      <Table.Cell>
+        <Image src={row.image} alt={row.label} width={48} height={48} />
+      </Table.Cell>
+      <Table.Cell title={row.label}>
         <HighlightText text={row.label} query={debouncedQuery} />
-      </td>
-      <td>
+      </Table.Cell>
+      <Table.Cell>
         {row.complete_variant_products
           ? `${row.complete_variant_products.complete}/${row.complete_variant_products.total}`
           : ""}
-      </td>
-      <td>
+      </Table.Cell>
+      <Table.Cell>
         {row.axes && row.axes.length > 0 && (
           <Tags>
             {row.axes.map((axis) => {
@@ -72,7 +73,7 @@ export const TreeRow = forwardRef<HTMLTableRowElement, TreeRowProps>(
             })}
           </Tags>
         )}
-      </td>
-    </TableRow>
+      </Table.Cell>
+    </Table.Row>
   ),
 );

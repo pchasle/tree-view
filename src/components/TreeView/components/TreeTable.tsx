@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
+import { Table } from "akeneo-design-system";
 import type { AnnotatedRow, SortColumn } from "../types.ts";
-import { Table, ScrollContainer, SortableHeader } from "./styled.ts";
+import { ScrollContainer } from "./styled.ts";
 import { TreeRow } from "./TreeRow.tsx";
 
 type TreeTableProps = {
@@ -11,8 +12,13 @@ type TreeTableProps = {
   collapsedSubmodels: Set<string>;
   onToggle: (identifier: string) => void;
   getAxisTint: (attributeCode: string) => string;
-  onSortClick: (column: SortColumn) => void;
-  getSortIndicator: (column: SortColumn) => string;
+  getSortDirection: (
+    column: SortColumn,
+  ) => "none" | "ascending" | "descending";
+  onDirectionChange: (
+    column: SortColumn,
+    direction: "none" | "ascending" | "descending",
+  ) => void;
 };
 
 export const TreeTable = ({
@@ -22,8 +28,8 @@ export const TreeTable = ({
   collapsedSubmodels,
   onToggle,
   getAxisTint,
-  onSortClick,
-  getSortIndicator,
+  getSortDirection,
+  onDirectionChange,
 }: TreeTableProps) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -45,23 +51,39 @@ export const TreeTable = ({
   return (
     <ScrollContainer ref={scrollContainerRef}>
       <Table>
-        <thead>
-          <tr>
-            <th>Type</th>
-            <SortableHeader onClick={() => onSortClick("identifier")}>
-              ID{getSortIndicator("identifier")}
-            </SortableHeader>
-            <th>Image</th>
-            <SortableHeader onClick={() => onSortClick("label")}>
-              Label{getSortIndicator("label")}
-            </SortableHeader>
-            <SortableHeader onClick={() => onSortClick("variant")}>
-              Variant{getSortIndicator("variant")}
-            </SortableHeader>
-            <th>Variation axis</th>
-          </tr>
-        </thead>
-        <tbody>
+        <Table.Header sticky={0}>
+          <Table.HeaderCell>Type</Table.HeaderCell>
+          <Table.HeaderCell
+            isSortable
+            sortDirection={getSortDirection("identifier")}
+            onDirectionChange={(direction) =>
+              onDirectionChange("identifier", direction)
+            }
+          >
+            ID
+          </Table.HeaderCell>
+          <Table.HeaderCell>Image</Table.HeaderCell>
+          <Table.HeaderCell
+            isSortable
+            sortDirection={getSortDirection("label")}
+            onDirectionChange={(direction) =>
+              onDirectionChange("label", direction)
+            }
+          >
+            Label
+          </Table.HeaderCell>
+          <Table.HeaderCell
+            isSortable
+            sortDirection={getSortDirection("variant")}
+            onDirectionChange={(direction) =>
+              onDirectionChange("variant", direction)
+            }
+          >
+            Variant
+          </Table.HeaderCell>
+          <Table.HeaderCell>Variation axis</Table.HeaderCell>
+        </Table.Header>
+        <Table.Body>
           {paddingTop > 0 && (
             <tr>
               <td
@@ -94,7 +116,7 @@ export const TreeTable = ({
               />
             </tr>
           )}
-        </tbody>
+        </Table.Body>
       </Table>
     </ScrollContainer>
   );

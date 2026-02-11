@@ -25,18 +25,19 @@ export const useTreeSort = () => {
     [sortColumn, sortDirection],
   );
 
-  const handleSortClick = (column: SortColumn) => {
-    if (sortColumn !== column) {
-      setSortColumn(column);
-      setSortDirection("asc");
-    } else {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
-    }
+  const getSortDirection = (
+    column: SortColumn,
+  ): "none" | "ascending" | "descending" => {
+    if (sortColumn !== column) return "none";
+    return sortDirection === "asc" ? "ascending" : "descending";
   };
 
-  const getSortIndicator = (column: SortColumn) => {
-    if (sortColumn !== column) return "";
-    return sortDirection === "asc" ? " ↑" : " ↓";
+  const handleDirectionChange = (
+    column: SortColumn,
+    direction: "none" | "ascending" | "descending",
+  ) => {
+    setSortColumn(column);
+    setSortDirection(direction === "descending" ? "desc" : "asc");
   };
 
   return {
@@ -45,7 +46,7 @@ export const useTreeSort = () => {
     setSortColumn,
     setSortDirection,
     comparator,
-    handleSortClick,
-    getSortIndicator,
+    getSortDirection,
+    handleDirectionChange,
   };
 };

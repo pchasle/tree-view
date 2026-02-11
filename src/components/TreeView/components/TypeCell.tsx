@@ -1,6 +1,6 @@
 import { ArrowDownIcon, ArrowRightIcon, Tag } from "akeneo-design-system";
 import type { ProductType } from "../types.ts";
-import { ArrowButton, TypeCellWrapper } from "./styled.ts";
+import { TypeCellWrapper } from "./styled.ts";
 
 export const TypeCell = ({
   type,
@@ -21,14 +21,14 @@ export const TypeCell = ({
     case "submodel":
       return (
         <TypeCellWrapper $indent={0}>
-          <ArrowButton
+          <span
             onClick={(e) => {
               e.stopPropagation();
               onToggle?.();
             }}
           >
             {isCollapsed ? <ArrowRightIcon /> : <ArrowDownIcon />}
-          </ArrowButton>{" "}
+          </span>{" "}
           <Tag tint="dark_cyan">{type}</Tag>
         </TypeCellWrapper>
       );

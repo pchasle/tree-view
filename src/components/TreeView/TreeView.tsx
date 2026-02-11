@@ -27,8 +27,8 @@ export const TreeView = ({ product }: TreeViewProps) => {
     setSortColumn,
     setSortDirection,
     comparator,
-    handleSortClick,
-    getSortIndicator,
+    getSortDirection,
+    handleDirectionChange,
   } = useTreeSort();
 
   const {
@@ -98,8 +98,8 @@ export const TreeView = ({ product }: TreeViewProps) => {
         collapsedSubmodels={collapsedSubmodels}
         onToggle={toggle}
         getAxisTint={getAxisTint}
-        onSortClick={handleSortClick}
-        getSortIndicator={getSortIndicator}
+        getSortDirection={getSortDirection}
+        onDirectionChange={handleDirectionChange}
       />
     </>
   );
