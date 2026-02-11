@@ -8,8 +8,8 @@ import { usePersistedTreeState } from "./hooks/usePersistedTreeState.ts";
 import { useTreeData } from "./hooks/useTreeData.ts";
 import { TreeToolbar } from "./components/TreeToolbar.tsx";
 import { TreeTable } from "./components/TreeTable.tsx";
-import { Helper, Modal } from "akeneo-design-system";
-import styled from "styled-components";
+import { TreeViewModal } from "./components/TreeViewModal.tsx";
+import { Helper } from "akeneo-design-system";
 
 type TreeViewProps = {
   product: {
@@ -50,7 +50,7 @@ export const TreeView = ({ product }: TreeViewProps) => {
 
   const getAxisTint = useAxisTint(data);
 
-  const productLabel = useMemo(() => {
+  const rootProductModelLabel = useMemo(() => {
     return data?.find((item) => item.parent === null)?.label ?? "";
   }, [data]);
 
@@ -88,41 +88,29 @@ export const TreeView = ({ product }: TreeViewProps) => {
   if (isError) return <p>Error loading data.</p>;
 
   return (
-    <WideModal closeTitle="Close" onClose={() => {}}>
-      <ModalBody>
-        <Modal.SectionTitle color="brand">Tree View</Modal.SectionTitle>
-        <Modal.Title>{productLabel}</Modal.Title>
-        <TreeToolbar
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          showHidden={showHidden}
-          onShowHiddenChange={setShowHidden}
-          onExpandAll={expandAll}
-          onCollapseAll={() => collapseAll(allSubmodelIds)}
-        />
-        <TreeTable
-          rows={rows}
-          debouncedQuery={debouncedQuery}
-          highlightedTechnicalId={product.technical_id}
-          collapsedSubmodels={collapsedSubmodels}
-          onToggle={toggle}
-          getAxisTint={getAxisTint}
-          getSortDirection={getSortDirection}
-          onDirectionChange={handleDirectionChange}
-        />
-        <Helper level="warning">
-          Some warning message, only in case the product model has more than
-          1000 variants.
-        </Helper>
-      </ModalBody>
-    </WideModal>
+    <TreeViewModal title={rootProductModelLabel} onClose={() => {}}>
+      <TreeToolbar
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        showHidden={showHidden}
+        onShowHiddenChange={setShowHidden}
+        onExpandAll={expandAll}
+        onCollapseAll={() => collapseAll(allSubmodelIds)}
+      />
+      <TreeTable
+        rows={rows}
+        debouncedQuery={debouncedQuery}
+        highlightedTechnicalId={product.technical_id}
+        collapsedSubmodels={collapsedSubmodels}
+        onToggle={toggle}
+        getAxisTint={getAxisTint}
+        getSortDirection={getSortDirection}
+        onDirectionChange={handleDirectionChange}
+      />
+      <Helper level="warning">
+        Some warning message, only in case the product model has more than 1000
+        variants.
+      </Helper>
+    </TreeViewModal>
   );
 };
-
-const WideModal = styled(Modal)`
-  min-width: 800px;
-`;
-
-const ModalBody = styled.div`
-  width: 90%;
-`;
