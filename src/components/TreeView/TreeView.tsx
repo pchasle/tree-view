@@ -8,7 +8,14 @@ import { useTreeData } from "./hooks/useTreeData.ts";
 import { TreeToolbar } from "./components/TreeToolbar.tsx";
 import { TreeTable } from "./components/TreeTable.tsx";
 import { TreeViewModal } from "./components/TreeViewModal.tsx";
-import { Helper, useDebounce } from "akeneo-design-system";
+import {
+  CityIllustration,
+  Helper,
+  Modal,
+  Placeholder,
+  ServerErrorIllustration,
+  useDebounce,
+} from "akeneo-design-system";
 
 type TreeViewProps = {
   product: {
@@ -83,8 +90,17 @@ export const TreeView = ({ product }: TreeViewProps) => {
     restore,
   );
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Error loading data.</p>;
+  if (isLoading) return <Modal closeTitle="Close" onClose={() => {}}></Modal>;
+  if (isError)
+    return (
+      <Modal closeTitle="Close" onClose={() => {}}>
+        <Placeholder
+          title="An error occurred"
+          illustration={<ServerErrorIllustration />}
+          size="large"
+        />
+      </Modal>
+    );
 
   return (
     <TreeViewModal title={rootProductModelLabel} onClose={() => {}}>

@@ -4,7 +4,9 @@ import type { ProductRow, AnnotatedRow } from "../types.ts";
 import { buildTreeOrder, annotateRows } from "../utils/tree.ts";
 
 const fetchProductModels = (): Promise<ProductRow[]> =>
-  import("../../product-models.json").then((m) => m.default as ProductRow[]);
+  new Promise((resolve) => setTimeout(resolve, 1000)).then(() =>
+    import("../../product-models.json").then((m) => m.default as ProductRow[]),
+  );
 
 export const useTreeData = (
   comparator: (a: ProductRow, b: ProductRow) => number,
