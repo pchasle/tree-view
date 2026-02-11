@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { Button, Checkbox, Search } from "akeneo-design-system";
 import styled from "styled-components";
 import { useTranslate } from "@akeneo-pim/shared";
@@ -20,6 +21,13 @@ export const TreeToolbar = ({
   onCollapseAll,
 }: TreeToolbarProps) => {
   const translate = useTranslate();
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      searchInputRef.current?.focus();
+    });
+  }, []);
 
   return (
     <Toolbar>
@@ -27,6 +35,7 @@ export const TreeToolbar = ({
         placeholder={translate("Search...")}
         searchValue={searchQuery}
         onSearchChange={onSearchChange}
+        inputRef={searchInputRef}
       >
         <Checkbox checked={showHidden} onChange={onShowHiddenChange}>
           {translate("Show hidden products")}
