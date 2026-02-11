@@ -1,3 +1,4 @@
+import { Button, Checkbox, Search } from "akeneo-design-system";
 import { Toolbar } from "./styled.ts";
 
 type TreeToolbarProps = {
@@ -18,25 +19,20 @@ export const TreeToolbar = ({
   onCollapseAll,
 }: TreeToolbarProps) => (
   <Toolbar>
-    <input
-      type="text"
+    <Search
       placeholder="Search..."
-      value={searchQuery}
-      onChange={(e) => onSearchChange(e.target.value)}
-    />
-    <label>
-      <input
-        type="checkbox"
-        checked={showHidden}
-        onChange={(e) => onShowHiddenChange(e.target.checked)}
-      />{" "}
-      Show hidden products
-    </label>
-    <button type="button" onClick={onExpandAll}>
+      searchValue={searchQuery}
+      onSearchChange={onSearchChange}
+    >
+      <Checkbox checked={showHidden} onChange={onShowHiddenChange}>
+        Show hidden products
+      </Checkbox>
+    </Search>
+    <Button ghost level="tertiary" size="small" onClick={onExpandAll}>
       Expand all
-    </button>
-    <button type="button" onClick={onCollapseAll}>
+    </Button>
+    <Button ghost level="tertiary" size="small" onClick={onCollapseAll}>
       Collapse all
-    </button>
+    </Button>
   </Toolbar>
 );
