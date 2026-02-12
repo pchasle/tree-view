@@ -39,24 +39,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_xxs_relaxed_mock",
     "technical_id": "3",
-    "label": "Classic T-Shirt Burgundy Polyester XXS Relaxed Mock",
+    "label": "Midnight Runner Ultra Comfort Edition",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_xxs_relaxed_mock/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "XXS"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Relaxed"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Mock"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Short"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Machine Wash Cold"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Portugal"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Lightweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade A"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Spring/Summer 2025"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Screen Print"
       }
     ]
   },
@@ -64,24 +99,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_5xl_athletic_mock",
     "technical_id": "4",
-    "label": "Classic T-Shirt Burgundy Polyester 5XL Athletic Mock",
+    "label": "Horizon Peak Performance Wear",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_5xl_athletic_mock/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "5XL"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Athletic"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Mock"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Long"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Hand Wash Only"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Italy"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Midweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade B"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Autumn/Winter 2025"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Sublimation"
       }
     ]
   },
@@ -89,24 +159,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_m_athletic_mock",
     "technical_id": "5",
-    "label": "Classic T-Shirt Burgundy Polyester M Athletic Mock",
+    "label": "Ember Glow Active Streetwear",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_m_athletic_mock/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "M"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Athletic"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Mock"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Three-Quarter"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Dry Clean Only"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Turkey"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Heavyweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade C"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Resort 2026"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Embroidery"
       }
     ]
   },
@@ -114,24 +219,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_5xl_slim_mock",
     "technical_id": "6",
-    "label": "Classic T-Shirt Burgundy Polyester 5XL Slim Mock",
+    "label": "Nordic Frost Essential Layer",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_5xl_slim_mock/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "5XL"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Slim"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Mock"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Cap Sleeve"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Machine Wash Warm"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Bangladesh"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Ultra-Light"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade A+"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Pre-Fall 2025"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Digital Direct"
       }
     ]
   },
@@ -139,24 +279,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_3xl_regular_crew",
     "technical_id": "7",
-    "label": "Classic T-Shirt Burgundy Polyester 3XL Regular Crew",
+    "label": "Solstice Urban Daily Basic",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_3xl_regular_crew/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "3XL"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Regular"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Crew"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Sleeveless"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Machine Wash Cold"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Vietnam"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Midweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade B"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Spring/Summer 2025"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Heat Transfer"
       }
     ]
   },
@@ -164,24 +339,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_m_tall_scoop",
     "technical_id": "8",
-    "label": "Classic T-Shirt Burgundy Polyester M Tall Scoop",
+    "label": "Driftwood Coastal Relaxation Fit",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_m_tall_scoop/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "M"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Tall"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Scoop"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Short"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Gentle Cycle"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "India"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Lightweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade A"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Cruise 2026"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Discharge Print"
       }
     ]
   },
@@ -189,24 +399,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_xl_athletic_crew",
     "technical_id": "9",
-    "label": "Classic T-Shirt Burgundy Polyester XL Athletic Crew",
+    "label": "Vanguard Pro Training Series",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_xl_athletic_crew/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "XL"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Athletic"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Crew"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Long"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Machine Wash Cold"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Portugal"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Heavyweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade B+"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Autumn/Winter 2025"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Flocking"
       }
     ]
   },
@@ -214,24 +459,59 @@
     "product_type": "variant",
     "identifier": "tshirt_classic_burgundy_polyester_m_oversized_scoop",
     "technical_id": "10",
-    "label": "Classic T-Shirt Burgundy Polyester M Oversized Scoop",
+    "label": "Zenith Lounge Weekend Capsule",
     "image": "https://picsum.photos/seed/tshirt_classic_burgundy_polyester_m_oversized_scoop/200/200",
     "parent": "tshirt_classic_burgundy_polyester",
     "axes": [
       {
         "attribute_code": "size",
-        "attribute_label": "Size",
+        "attribute_label": "International Standard Size",
         "axis_value": "M"
       },
       {
         "attribute_code": "fit",
-        "attribute_label": "Fit",
+        "attribute_label": "Body Fit Silhouette Type",
         "axis_value": "Oversized"
       },
       {
         "attribute_code": "neckline",
-        "attribute_label": "Neckline",
+        "attribute_label": "Neckline Cut Style",
         "axis_value": "Scoop"
+      },
+      {
+        "attribute_code": "sleeve_length",
+        "attribute_label": "Sleeve Length Measurement",
+        "axis_value": "Short"
+      },
+      {
+        "attribute_code": "wash_instruction",
+        "attribute_label": "Recommended Washing Instructions",
+        "axis_value": "Hand Wash Only"
+      },
+      {
+        "attribute_code": "country_of_origin",
+        "attribute_label": "Manufacturing Country of Origin",
+        "axis_value": "Morocco"
+      },
+      {
+        "attribute_code": "weight_category",
+        "attribute_label": "Fabric Weight Classification",
+        "axis_value": "Midweight"
+      },
+      {
+        "attribute_code": "sustainability_rating",
+        "attribute_label": "Environmental Sustainability Rating",
+        "axis_value": "Grade A"
+      },
+      {
+        "attribute_code": "season_collection",
+        "attribute_label": "Seasonal Collection Reference",
+        "axis_value": "Spring/Summer 2026"
+      },
+      {
+        "attribute_code": "print_technique",
+        "attribute_label": "Surface Print Application Technique",
+        "axis_value": "Pigment Dye"
       }
     ]
   }
