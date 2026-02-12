@@ -59,9 +59,9 @@ export const TreeView = ({ product }: TreeViewProps) => {
 
   const getAxisTint = useAxisTint(data);
 
-  const rootProductModelLabel = useMemo(() => {
-    return data?.find((item) => item.parent === null)?.label ?? "";
-  }, [data]);
+  const productLabel = useMemo(() => {
+    return data?.find((item) => item.technical_id === product.technical_id)?.label ?? "";
+  }, [data, product.technical_id]);
 
   const allSubmodelIds = useMemo(() => {
     if (!data) return [];
@@ -107,7 +107,7 @@ export const TreeView = ({ product }: TreeViewProps) => {
     );
 
   return (
-    <TreeViewModal title={rootProductModelLabel} onClose={() => {}}>
+    <TreeViewModal title={productLabel} onClose={() => {}}>
       <TreeToolbar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
