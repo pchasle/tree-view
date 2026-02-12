@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type {
   ProductRow,
   SortColumn,
@@ -35,8 +35,9 @@ export const usePersistedTreeState = (
     collapsedSubmodels: Set<string>;
   },
   restore: (persisted: PersistedState) => void,
-): void => {
+): { isReady: boolean } => {
   const restoredRef = useRef(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     if (!data || restoredRef.current) return;
@@ -46,6 +47,7 @@ export const usePersistedTreeState = (
     if (stored) {
       restore(stored);
     }
+    setIsReady(true);
   }, [data, restore]);
 
   useEffect(() => {
@@ -66,4 +68,6 @@ export const usePersistedTreeState = (
     state.showHidden,
     state.collapsedSubmodels,
   ]);
+
+  return { isReady };
 };

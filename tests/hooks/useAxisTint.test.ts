@@ -21,8 +21,8 @@ describe("useAxisTint", () => {
       }),
     ];
     const { result } = renderHook(() => useAxisTint(data));
-    expect(result.current("color")).toBe("green");
-    expect(result.current("fabric")).toBe("dark_blue");
+    expect(result.current("color")).toBe("blue");
+    expect(result.current("fabric")).toBe("orange");
   });
 
   it("assigns colors in order of first appearance across rows", () => {
@@ -47,18 +47,18 @@ describe("useAxisTint", () => {
       }),
     ];
     const { result } = renderHook(() => useAxisTint(data));
-    expect(result.current("size")).toBe("green");
-    expect(result.current("fit")).toBe("dark_blue");
+    expect(result.current("size")).toBe("blue");
+    expect(result.current("fit")).toBe("orange");
   });
 
   it("returns the first palette color for unknown attribute codes", () => {
     const { result } = renderHook(() => useAxisTint([]));
-    expect(result.current("nonexistent")).toBe("green");
+    expect(result.current("nonexistent")).toBe("blue");
   });
 
   it("handles undefined data", () => {
     const { result } = renderHook(() => useAxisTint(undefined));
-    expect(result.current("anything")).toBe("green");
+    expect(result.current("anything")).toBe("blue");
   });
 
   it("does not duplicate colors for the same attribute code", () => {
@@ -83,18 +83,18 @@ describe("useAxisTint", () => {
       }),
     ];
     const { result } = renderHook(() => useAxisTint(data));
-    expect(result.current("color")).toBe("green");
+    expect(result.current("color")).toBe("blue");
   });
 
-  it("wraps around palette when more attributes than colors (11)", () => {
-    const axes = Array.from({ length: 12 }, (_, i) => ({
+  it("wraps around palette when more attributes than colors (14)", () => {
+    const axes = Array.from({ length: 15 }, (_, i) => ({
       attribute_code: `attr_${i}`,
       attribute_label: `Attr ${i}`,
       axis_value: `val_${i}`,
     }));
     const data = [makeSubmodel({ axes })];
     const { result } = renderHook(() => useAxisTint(data));
-    expect(result.current("attr_0")).toBe("green");
-    expect(result.current("attr_11")).toBe("green"); // 11 % 11 = 0
+    expect(result.current("attr_0")).toBe("blue");
+    expect(result.current("attr_14")).toBe("blue"); // 14 % 14 = 0
   });
 });

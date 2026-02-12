@@ -81,7 +81,7 @@ export const TreeView = ({ product }: TreeViewProps) => {
     [setSortColumn, setSortDirection, setCollapsedSubmodels],
   );
 
-  usePersistedTreeState(
+  const { isReady } = usePersistedTreeState(
     data,
     {
       sortColumn,
@@ -121,6 +121,7 @@ export const TreeView = ({ product }: TreeViewProps) => {
         debouncedQuery={debouncedQuery}
         highlightedTechnicalId={product.technical_id}
         collapsedSubmodels={collapsedSubmodels}
+        isReady={isReady}
         onToggle={toggle}
         getAxisTint={getAxisTint}
         getSortDirection={getSortDirection}

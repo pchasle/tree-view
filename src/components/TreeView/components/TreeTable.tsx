@@ -4,7 +4,7 @@ import {
   Placeholder,
   Table,
 } from "akeneo-design-system";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { AnnotatedRow, SortColumn } from "../types.ts";
 import styled from "styled-components";
 import { TreeRow } from "./TreeRow.tsx";
@@ -15,6 +15,7 @@ type TreeTableProps = {
   debouncedQuery: string;
   highlightedTechnicalId: string;
   collapsedSubmodels: Set<string>;
+  isReady: boolean;
   onToggle: (identifier: string) => void;
   getAxisTint: (attributeCode: string) => string;
   getSortDirection: (column: SortColumn) => "none" | "ascending" | "descending";
@@ -29,6 +30,7 @@ export const TreeTable = ({
   debouncedQuery,
   highlightedTechnicalId,
   collapsedSubmodels,
+  isReady,
   onToggle,
   getAxisTint,
   getSortDirection,
@@ -36,6 +38,7 @@ export const TreeTable = ({
 }: TreeTableProps) => {
   const translate = useTranslate();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const hasScrolledRef = useRef(false);
 
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
@@ -43,6 +46,17 @@ export const TreeTable = ({
     estimateSize: () => 75,
     overscan: 10,
   });
+
+  useEffect(() => {
+    if (!isReady || hasScrolledRef.current) return;
+    hasScrolledRef.current = true;
+    const index = rows.findIndex(
+      (row) => row.technical_id === highlightedTechnicalId,
+    );
+    if (index !== -1) {
+      rowVirtualizer.scrollToIndex(index, { align: "center" });
+    }
+  }, [isReady, rows, highlightedTechnicalId, rowVirtualizer]);
 
   const virtualItems = rowVirtualizer.getVirtualItems();
   const paddingTop = virtualItems.length > 0 ? virtualItems[0].start : 0;
