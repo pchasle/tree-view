@@ -54,7 +54,10 @@ export const TreeTable = ({
       (row) => row.technical_id === highlightedTechnicalId,
     );
     if (index !== -1) {
-      rowVirtualizer.scrollToIndex(index, { align: "center" });
+      const raf = requestAnimationFrame(() => {
+        rowVirtualizer.scrollToIndex(index, { align: "center" });
+      });
+      return () => cancelAnimationFrame(raf);
     }
   }, [isReady, rows, highlightedTechnicalId, rowVirtualizer]);
 
