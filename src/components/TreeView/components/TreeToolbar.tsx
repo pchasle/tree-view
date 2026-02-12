@@ -32,7 +32,9 @@ export const TreeToolbar = ({
   return (
     <Toolbar>
       <Search
-        placeholder={translate("Search...")}
+        placeholder={translate(
+          "Search by label, identifier and variation axis",
+        )}
         searchValue={searchQuery}
         onSearchChange={onSearchChange}
         inputRef={searchInputRef}
