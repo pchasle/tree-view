@@ -1,10 +1,29 @@
 import { useMemo } from "react";
 import { useQuery } from "react-query";
-import type { ProductRow, AnnotatedRow } from "../types.ts";
-import { buildTreeOrder, annotateRows } from "../utils/tree.ts";
-import { useDataset } from "../../../context/DatasetContext.tsx";
+import type { AnnotatedRow, ProductRow } from "../types.ts";
+import { annotateRows, buildTreeOrder } from "../utils/tree.ts";
+
+const BAPID = "iq299ro4tlbmh1qbbm8stpmdej";
+
+const fetchTree = async (
+  productType: "model" | "product",
+  technicalId: string,
+): Promise<ProductRow[]> => {
+  const url = `/enrich/product-model/rest/tree?product_type=${productType}&technical_id=${technicalId}`;
+  const response = await fetch(url, {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+      Cookie: `BAPID=${BAPID}`,
+    },
+    credentials: "include",
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+};
 
 export const useTreeData = (
+  productType: "model" | "product",
+  technicalId: string,
   comparator: (a: ProductRow, b: ProductRow) => number,
   debouncedQuery: string,
   showHidden: boolean,
@@ -15,11 +34,9 @@ export const useTreeData = (
   isLoading: boolean;
   isError: boolean;
 } => {
-  const { datasetKey, loadDataset } = useDataset();
-
   const { data, isLoading, isError } = useQuery(
-    ["product-models", datasetKey],
-    loadDataset,
+    ["product-models", productType, technicalId],
+    () => fetchTree(productType, technicalId),
   );
 
   const rows = useMemo(() => {

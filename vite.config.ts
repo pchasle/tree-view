@@ -11,4 +11,12 @@ export default defineConfig({
       '@akeneo-pim/shared': path.resolve(__dirname, 'src/shared'),
     },
   },
+  server: {
+    proxy: {
+      '/enrich': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+      },
+    },
+  },
 })

@@ -1,3 +1,4 @@
+import { useTranslate } from "@akeneo-pim/shared";
 import {
   Helper,
   Modal,
@@ -12,16 +13,15 @@ import { TreeViewModal } from "./components/TreeViewModal.tsx";
 import { useAxisTint } from "./hooks/useAxisTint.ts";
 import { useCollapseState } from "./hooks/useCollapseState.ts";
 import { usePersistedTreeState } from "./hooks/usePersistedTreeState.ts";
-import { useTranslate } from "@akeneo-pim/shared";
 import { useTreeData } from "./hooks/useTreeData.ts";
 import { useTreeSort } from "./hooks/useTreeSort.ts";
-import type { PersistedState, ProductType } from "./types.ts";
+import type { PersistedState } from "./types.ts";
 
 const VARIANT_LIMIT = 1000;
 
 type TreeViewProps = {
   product: {
-    product_type: ProductType;
+    product_type: "model" | "product";
     technical_id: string;
   };
 };
@@ -51,6 +51,8 @@ export const TreeView = ({ product }: TreeViewProps) => {
   } = useCollapseState();
 
   const { data, rows, isLoading, isError } = useTreeData(
+    product.product_type,
+    product.technical_id,
     comparator,
     debouncedQuery,
     showHidden,
@@ -60,7 +62,10 @@ export const TreeView = ({ product }: TreeViewProps) => {
   const getAxisTint = useAxisTint(data);
 
   const productLabel = useMemo(() => {
-    return data?.find((item) => item.technical_id === product.technical_id)?.label ?? "";
+    return (
+      data?.find((item) => item.technical_id === product.technical_id)?.label ??
+      ""
+    );
   }, [data, product.technical_id]);
 
   const allSubmodelIds = useMemo(() => {
